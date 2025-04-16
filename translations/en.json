@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Welcome to Our Elevator Services",
+    "subtitle": "Professional elevator installation and maintenance"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are a leading provider of elevator services with years of experience in the industry."
+  },
+  "services": {
+    "title": "Our Services",
+    "installation": "Installation",
+    "maintenance": "Maintenance",
+    "repair": "Repair",
+    "modernization": "Modernization"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message"
+  },
+  "footer": {
+    "copyright": "© 2024 Elevator Services. All rights reserved."
+  }
+} 
