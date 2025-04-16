@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Logo and Description Section */}
           <div className="lg:col-span-5 order-1 md:order-1">
             <div className="flex flex-col items-center md:items-start">
-              <img src="/profiles.png" alt={t('logoAlt')} className="w-[72px] md:w-[92px] h-[72px] md:h-[92px] object-contain mb-4 md:mb-6 rounded-full" />
+              <img src="/logo2.png" alt={t('logoAlt')} className="w-[72px] md:w-[92px] h-[72px] md:h-[92px] object-contain mb-4 md:mb-6 rounded-full" />
               <p className="text-[#656565] text-sm md:text-base leading-[24px] md:leading-[32px]   mb-6 md:mb-8 max-w-[467px]" >
                 {t('description')}
               </p>
@@ -57,7 +57,7 @@ export default function Footer() {
               <h3 className="text-[#05509F] text-xl md:text-2xl font-bold mb-3 md:mb-4">{t('contactUs')}</h3>
               <div className="w-12 h-0.5 bg-[#05509F] mb-6 md:mb-8"></div>
               <div className="flex flex-col items-center md:items-start gap-4 md:gap-5">
-                <span className="text-[#656565] text-sm md:text-base">info@capital-smart.com</span>
+                <span className="text-[#656565] text-sm md:text-base">info@3Capital_Financial .com</span>
                 <span className="text-[#656565] text-sm md:text-base">20 1029700534+</span>
                 <span className="text-[#656565] text-sm md:text-base">01029700534 02+</span>
               </div>
@@ -79,7 +79,7 @@ export default function Footer() {
               <img src="/instagram.png" alt="Instagram" className="w-10 h-8 md:w-12 md:h-10" />
             </Link>
             <Link href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
-              <img src="/x.png" alt="X" className="w-10 h-8 md:w-12 md:h-10" />
+              <img src="/xplat.png" alt="X" className="w-10 h-8 md:w-12 md:h-10" />
             </Link>
           </div>
         </div>

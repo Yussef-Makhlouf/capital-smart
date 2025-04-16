@@ -45,7 +45,7 @@ export default function FinancialPage() {
       <section className="relative w-full h-[262px] flex items-center justify-center overflow-hidden ">
         <div className="absolute inset-0 z-10" />
         <Image
-          src="/subhero.png"
+          src="/article2.jpg"
           alt={t('pageTitle')}
           fill
           className="object-cover"

@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
+import Link from "next/link"
 
 type Article = {
   id: number
@@ -16,7 +17,7 @@ type Article = {
   link: string
 }
 
-export default function LibrarySection() {
+export default function LibrarySection({ showButton = true }: { showButton?: boolean }) {
   const t = useTranslations('librarySection');
   const [activeCategory, setActiveCategory] = useState("all")
 
@@ -27,7 +28,7 @@ export default function LibrarySection() {
       description: t('articles.article1.description'),
       category: t('categories.investment'),
       date: t('articles.article1.date'),
-      image: "/cover.png",
+      image: "/cover1.jpg",
       link: "/articles/investment-decisions"
     },
     {
@@ -36,7 +37,7 @@ export default function LibrarySection() {
       description: t('articles.article2.description'),
       category: t('categories.management'),
       date: t('articles.article2.date'),
-      image: "/cover.png",
+      image: "/article3.jpg",
       link: "/articles/virtual-cfo"
     },
     {
@@ -45,7 +46,7 @@ export default function LibrarySection() {
       description: t('articles.article3.description'),
       category: t('categories.planning'),
       date: t('articles.article3.date'),
-      image: "/cover.png",
+      image: "/article2.jpg",
       link: "/articles/financial-planning"
     },
     {
@@ -54,7 +55,7 @@ export default function LibrarySection() {
       description: t('articles.article4.description'),
       category: t('categories.digital'),
       date: t('articles.article4.date'),
-      image: "/cover.png",
+      image: "/cover3.jpg",
       link: "/articles/digital-transformation"
     },
     {
@@ -63,7 +64,7 @@ export default function LibrarySection() {
       description: t('articles.article5.description'),
       category: t('categories.risk'),
       date: t('articles.article5.date'),
-      image: "/cover.png",
+      image: "/pro2.jpg",
       link: "/articles/risk-management"
     },
     {
@@ -72,7 +73,7 @@ export default function LibrarySection() {
       description: t('articles.article6.description'),
       category: t('categories.merger'),
       date: t('articles.article6.date'),
-      image: "/cover.png",
+      image: "/pro5.jpg",
       link: "/articles/mergers-acquisitions"
     }
   ]
@@ -181,12 +182,16 @@ export default function LibrarySection() {
         </div>
 
         <div className="flex justify-center mt-16">
+        {showButton && (
+       <Link href={'/library'}>
           <Button className="bg-[#EC2127] hover:bg-[#EC2127]/90 rounded-[40px] h-[58px] px-8 text-white font-bold text-base gap-2">
             {t('viewMoreArticles')}
             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </Button>
+</Link>
+        )}
         </div>
       </div>
 

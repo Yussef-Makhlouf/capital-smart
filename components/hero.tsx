@@ -37,11 +37,11 @@ export default function Hero() {
 
             {/* Main Headings */}
             <div className="flex flex-col gap-5 md:gap-6 w-full text-center">
-              <h1 className="text-white text-3xl md:text-5xl lg:text-[66px] font-extrabold leading-tight md:leading-[67px] whitespace-pre-line">
-                {t('title')}
-              </h1>
+              {/* <h1 className="text-white text-3xl md:text-5xl lg:text-[66px] font-extrabold leading-tight md:leading-[67px] whitespace-pre-line">
+                
+              </h1> */}
               <h2 className="text-white text-3xl md:text-5xl lg:text-[56px] font-extrabold leading-tight md:leading-[67px] max-w-[803px] mx-auto text-center">
-                {t('subtitle')}
+              {t('title')}   {t('subtitle')}
               </h2>
             </div>
 

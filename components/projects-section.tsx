@@ -13,27 +13,27 @@ export default function ProjectsSection({ showButton = true }: { showButton?: bo
   const services = [
     {
       key: 'accounting',
-      image: '/profiles.png'
+      image: '/pro7.jpg'
     },
     {
       key: 'supervision',
-      image: '/profiles.png'
+      image: '/pro3.jpg'
     },
     {
       key: 'virtualCFO',
-      image: '/profiles.png'
+      image: '/pro4.jpg'
     },
     {
       key: 'dueDiligence',
-      image: '/profiles.png'
+      image: '/cover1.jpg'
     },
     {
       key: 'zakatTax',
-      image: '/profiles.png'
+      image: '/pro.jpg'
     },
     {
       key: 'management',
-      image: '/profiles.png'
+      image: '/cover5.jpg'
     }
   ]
 
@@ -101,13 +101,14 @@ export default function ProjectsSection({ showButton = true }: { showButton?: bo
         {/* Button */}
         {showButton && (
           <div className="flex justify-center mt-20">
-            <Button 
-              onClick={() => setShowAllServices(!showAllServices)}
+           <Link href={'./services'}>
+           <Button 
+              
               className="bg-[#E41937] hover:bg-[#E41937]/90 rounded-[40px] h-[70px] px-12 text-white font-bold text-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             >
-              {showAllServices ? t('showLess') : t('showMore')}
+               {t('showMore')}
               <img src="/vector.png" alt="arrow-right" className="w-3 h-3" />
-            </Button>
+            </Button></Link>
           </div>
         )}
       </div>

@@ -3,7 +3,7 @@ import './globals.css';
 import './fonts/fonts.css';
 
 export const metadata: Metadata = {
-  title: 'Capital Smart - Financial & Business Consulting',
+  title: '3Capital  - Financial & Business Consulting',
   description: 'Your trusted partner in financial and business consulting services',
 };
 

@@ -32,7 +32,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="text-primary font-bold text-lg">{t('email')}</h3>
-                    <p className="text-[#475467]">info@capital-smart.com</p>
+                    <p className="text-[#475467]">info@3Capital_Financial .com</p>
                   </div>
                 </div>
 

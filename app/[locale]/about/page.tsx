@@ -33,7 +33,7 @@ export default function AboutSection() {
       <section className="relative w-full h-[262px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-10" />
         <Image
-          src="/subhero.png"
+          src="/article2.jpg"
           alt={t('pageTitle')}
           fill
           className="object-cover"
@@ -75,7 +75,7 @@ export default function AboutSection() {
 
           <div className="w-full lg:w-[820px] h-[400px] sm:h-[500px] lg:h-[775px] relative rounded-[30px] sm:rounded-[50px] lg:rounded-[100px] overflow-hidden">
             <Image
-              src="/image.png"
+              src="/profiles.png"
               alt={t('aboutUs.imageAlt')}
               fill
               className="object-cover"
@@ -87,7 +87,7 @@ export default function AboutSection() {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-[87px] py-12 lg:py-[100px]">
           <div className="w-full lg:w-[820px] h-[400px] sm:h-[500px] lg:h-[775px] relative rounded-[30px] sm:rounded-[50px] lg:rounded-[100px] overflow-hidden">
             <Image
-              src="/image-1.png"
+              src="/article.jpg"
               alt={t('vision.imageAlt')}
               fill
               className="object-cover"
@@ -123,7 +123,7 @@ export default function AboutSection() {
 
           <div className="w-full lg:w-[820px] h-[400px] sm:h-[500px] lg:h-[775px] relative rounded-[30px] sm:rounded-[50px] lg:rounded-[100px] overflow-hidden">
             <Image
-              src="/image-2.png"
+              src="/finance6.jpg"
               alt={t('mission.imageAlt')}
               fill
               className="object-cover"
@@ -135,7 +135,7 @@ export default function AboutSection() {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-[87px] py-12 lg:py-[100px]">
           <div className="w-full lg:w-[820px] h-[400px] sm:h-[500px] lg:h-[775px] relative rounded-[30px] sm:rounded-[50px] lg:rounded-[100px] overflow-hidden">
             <Image
-              src="/image-3.png"
+              src="/article3.jpg"
               alt={t('values.imageAlt')}
               fill
               className="object-cover"

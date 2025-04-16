@@ -59,7 +59,7 @@ export default function AboutSection() {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[100px]">
         <div className="flex flex-col items-start gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-[1695px] mx-auto">
           {/* Badge */}
-          <div className="w-full flex justify-end" >
+          <div className="w-full flex " >
             <div className="bg-white rounded-[15px] sm:rounded-[30px] md:rounded-[40px] py-[6px] sm:py-[8px] md:py-[10px] px-4 sm:px-5 md:px-6 flex items-center" >
               <span className="text-[#05509F] font-bold text-[10px] sm:text-xs md:text-sm">{t('badge')}</span>
             </div>
