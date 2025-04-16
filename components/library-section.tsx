@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 
 type Article = {
   id: number
@@ -16,73 +17,74 @@ type Article = {
 }
 
 export default function LibrarySection() {
+  const t = useTranslations('librarySection');
   const [activeCategory, setActiveCategory] = useState("all")
 
   const articles: Article[] = [
     {
       id: 1,
-      title: "أهمية الاستشارات المالية في اتخاذ القرارات الاستثمارية",
-      description: "كيف يمكن للاستشارات المالية أن تساعد في اتخاذ قرارات استثمارية مستنيرة وتحقيق النجاح المالي.",
-      category: "استثمار",
-      date: "15 مارس 2024",
+      title: t('articles.article1.title'),
+      description: t('articles.article1.description'),
+      category: t('categories.investment'),
+      date: t('articles.article1.date'),
       image: "/article1.png",
       link: "/articles/investment-decisions"
     },
     {
       id: 2,
-      title: "دور المدير المالي الافتراضي في تطوير الأعمال",
-      description: "استكشف كيف يمكن للمدير المالي الافتراضي أن يساهم في نمو وتطوير الأعمال التجارية.",
-      category: "إدارة",
-      date: "10 مارس 2024",
+      title: t('articles.article2.title'),
+      description: t('articles.article2.description'),
+      category: t('categories.management'),
+      date: t('articles.article2.date'),
       image: "/article2.png",
       link: "/articles/virtual-cfo"
     },
     {
       id: 3,
-      title: "أساسيات التخطيط المالي للشركات الناشئة",
-      description: "دليل شامل للتخطيط المالي الفعال للشركات الناشئة ورواد الأعمال.",
-      category: "تخطيط",
-      date: "5 مارس 2024",
+      title: t('articles.article3.title'),
+      description: t('articles.article3.description'),
+      category: t('categories.planning'),
+      date: t('articles.article3.date'),
       image: "/article3.png",
       link: "/articles/financial-planning"
     },
     {
       id: 4,
-      title: "التحول الرقمي في القطاع المالي",
-      description: "كيف يغير التحول الرقمي مستقبل الخدمات المالية والاستشارية.",
-      category: "رقمنة",
-      date: "1 مارس 2024",
+      title: t('articles.article4.title'),
+      description: t('articles.article4.description'),
+      category: t('categories.digital'),
+      date: t('articles.article4.date'),
       image: "/article4.png",
       link: "/articles/digital-transformation"
     },
     {
       id: 5,
-      title: "إدارة المخاطر المالية في ظل التحديات الاقتصادية",
-      description: "استراتيجيات فعالة لإدارة المخاطر المالية في البيئات الاقتصادية المتغيرة.",
-      category: "مخاطر",
-      date: "25 فبراير 2024",
+      title: t('articles.article5.title'),
+      description: t('articles.article5.description'),
+      category: t('categories.risk'),
+      date: t('articles.article5.date'),
       image: "/article5.png",
       link: "/articles/risk-management"
     },
     {
       id: 6,
-      title: "أهمية العناية الواجبة في عمليات الدمج والاستحواذ",
-      description: "دور العناية الواجبة في ضمان نجاح عمليات الدمج والاستحواذ.",
-      category: "دمج",
-      date: "20 فبراير 2024",
+      title: t('articles.article6.title'),
+      description: t('articles.article6.description'),
+      category: t('categories.merger'),
+      date: t('articles.article6.date'),
       image: "/article6.png",
       link: "/articles/mergers-acquisitions"
     }
   ]
 
   const categories = [
-    { id: "all", label: "الكل" },
-    { id: "استثمار", label: "استثمار" },
-    { id: "إدارة", label: "إدارة" },
-    { id: "تخطيط", label: "تخطيط" },
-    { id: "رقمنة", label: "رقمنة" },
-    { id: "مخاطر", label: "مخاطر" },
-    { id: "دمج", label: "دمج" }
+    { id: "all", label: t('categoryFilters.all') },
+    { id: t('categories.investment'), label: t('categories.investment') },
+    { id: t('categories.management'), label: t('categories.management') },
+    { id: t('categories.planning'), label: t('categories.planning') },
+    { id: t('categories.digital'), label: t('categories.digital') },
+    { id: t('categories.risk'), label: t('categories.risk') },
+    { id: t('categories.merger'), label: t('categories.merger') }
   ]
 
   const filteredArticles = activeCategory === "all" 
@@ -95,16 +97,16 @@ export default function LibrarySection() {
         <div className="flex flex-col items-center gap-8 lg:gap-12">
           <div className="flex items-center gap-5">
             <div className="bg-[rgba(5,80,159,0.1)] rounded-[40px] px-5 py-[10px]">
-              <span className="text-[#05509F] text-[14px] font-bold">المكتبة والمقالات</span>
+              <span className="text-[#05509F] text-[14px] font-bold">{t('sectionBadge')}</span>
             </div>
           </div>
 
           <h2 className="text-[#05509F] text-3xl sm:text-4xl lg:text-[52px] font-extrabold leading-tight lg:leading-[53px] text-center">
-            أحدث المقالات والموارد المالية
+            {t('sectionTitle')}
           </h2>
 
           <p className="text-[#475467] text-lg font-medium leading-8 text-center max-w-[800px]">
-            اكتشف مجموعة من المقالات والموارد المالية التي تساعدك في اتخاذ قرارات مالية مستنيرة وتطوير أعمالك.
+            {t('sectionDescription')}
           </p>
 
           <div className="flex items-center gap-3 flex-wrap justify-center">
@@ -167,7 +169,7 @@ export default function LibrarySection() {
                   asChild
                 >
                   <a href={article.link}>
-                    اقرأ المزيد
+                    {t('readMore')}
                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
                       <path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -180,7 +182,7 @@ export default function LibrarySection() {
 
         <div className="flex justify-center mt-16">
           <Button className="bg-[#EC2127] hover:bg-[#EC2127]/90 rounded-[40px] h-[58px] px-8 text-white font-bold text-base gap-2">
-            عرض المزيد من المقالات
+            {t('viewMoreArticles')}
             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

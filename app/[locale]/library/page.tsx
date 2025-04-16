@@ -11,6 +11,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import ContactSection from "@/components/contact-section";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 type Service = {
   id: number;
@@ -23,103 +24,104 @@ type Service = {
 };
 
 export default function FinancialServicesPage() {
+  const t = useTranslations('library');
   const [activeCategory, setActiveCategory] = useState("all");
 
   const services: Service[] = [
     {
       id: 1,
-      title: "الاستشارات المالية المتقدمة",
-      description: "حلول استشارية متكاملة تساعد الشركات في تحقيق النمو المستدام وتحسين الأداء المالي من خلال استراتيجيات مبتكرة.",
-      category: "استشارات متقدمة",
+      title: t('services.service1.title'),
+      description: t('services.service1.description'),
+      category: t('categories.advanced'),
       image: "/service1.png",
       link: "/services/advanced-consulting",
       features: [
-        "تحليل مالي متقدم",
-        "تخطيط استراتيجي طويل الأمد",
-        "تحسين الهيكل المالي",
-        "إدارة الأصول والاستثمارات"
+        t('services.service1.features.feature1'),
+        t('services.service1.features.feature2'),
+        t('services.service1.features.feature3'),
+        t('services.service1.features.feature4')
       ]
     },
     {
       id: 2,
-      title: "إدارة الثروات والاستثمار",
-      description: "خدمات متخصصة في إدارة الثروات وتنويع المحافظ الاستثمارية لتحقيق أقصى عائد مع إدارة المخاطر.",
-      category: "إدارة الثروات",
+      title: t('services.service2.title'),
+      description: t('services.service2.description'),
+      category: t('categories.wealth'),
       image: "/service2.png",
       link: "/services/wealth-management",
       features: [
-        "تخطيط استثماري شخصي",
-        "إدارة المحافظ الاستثمارية",
-        "تحليل الأسواق العالمية",
-        "تقييم المخاطر والعوائد"
+        t('services.service2.features.feature1'),
+        t('services.service2.features.feature2'),
+        t('services.service2.features.feature3'),
+        t('services.service2.features.feature4')
       ]
     },
     {
       id: 3,
-      title: "الخدمات المصرفية الاستثمارية",
-      description: "حلول مصرفية استثمارية متكاملة للشركات والأفراد، تشمل التمويل والاستثمار وإدارة السيولة.",
-      category: "خدمات مصرفية",
+      title: t('services.service3.title'),
+      description: t('services.service3.description'),
+      category: t('categories.banking'),
       image: "/service3.png",
       link: "/services/investment-banking",
       features: [
-        "خدمات التمويل المتقدم",
-        "إدارة السيولة والتدفقات النقدية",
-        "خدمات الاكتتاب والاكتتاب العام",
-        "إدارة الديون والتمويل"
+        t('services.service3.features.feature1'),
+        t('services.service3.features.feature2'),
+        t('services.service3.features.feature3'),
+        t('services.service3.features.feature4')
       ]
     },
     {
       id: 4,
-      title: "التحليل المالي والاستثماري المتقدم",
-      description: "تحليلات مالية متعمقة وتقارير استثمارية شاملة تساعد في اتخاذ قرارات استثمارية مستنيرة.",
-      category: "تحليل متقدم",
+      title: t('services.service4.title'),
+      description: t('services.service4.description'),
+      category: t('categories.analysis'),
       image: "/service4.png",
       link: "/services/advanced-analysis",
       features: [
-        "تحليل الأسواق المالية",
-        "تقييم الاستثمارات والفرص",
-        "تحليل المخاطر المالية",
-        "توصيات استثمارية مخصصة"
+        t('services.service4.features.feature1'),
+        t('services.service4.features.feature2'),
+        t('services.service4.features.feature3'),
+        t('services.service4.features.feature4')
       ]
     },
     {
       id: 5,
-      title: "التخطيط المالي الاستراتيجي",
-      description: "خدمات تخطيط مالي استراتيجي تساعد الشركات والأفراد في تحقيق أهدافهم المالية طويلة الأمد.",
-      category: "تخطيط استراتيجي",
+      title: t('services.service5.title'),
+      description: t('services.service5.description'),
+      category: t('categories.planning'),
       image: "/service5.png",
       link: "/services/strategic-planning",
       features: [
-        "تخطيط مالي شمولي",
-        "إدارة المخاطر المالية",
-        "تخطيط الضرائب والاستثمار",
-        "تقييم الأداء المالي"
+        t('services.service5.features.feature1'),
+        t('services.service5.features.feature2'),
+        t('services.service5.features.feature3'),
+        t('services.service5.features.feature4')
       ]
     },
     {
       id: 6,
-      title: "خدمات التقارير المالية",
-      description: "إعداد وتحليل التقارير المالية المتخصصة وفقاً للمعايير المحلية والدولية.",
-      category: "تقارير مالية",
+      title: t('services.service6.title'),
+      description: t('services.service6.description'),
+      category: t('categories.reporting'),
       image: "/service6.png",
       link: "/services/financial-reporting",
       features: [
-        "إعداد القوائم المالية",
-        "تحليل النسب المالية",
-        "تقييم الأداء المالي",
-        "تقارير مخصصة للشركات"
+        t('services.service6.features.feature1'),
+        t('services.service6.features.feature2'),
+        t('services.service6.features.feature3'),
+        t('services.service6.features.feature4')
       ]
     }
   ];
 
   const categories = [
-    { id: "all", label: "الكل" },
-    { id: "استشارات متقدمة", label: "استشارات متقدمة" },
-    { id: "إدارة الثروات", label: "إدارة الثروات" },
-    { id: "خدمات مصرفية", label: "خدمات مصرفية" },
-    { id: "تحليل متقدم", label: "تحليل متقدم" },
-    { id: "تخطيط استراتيجي", label: "تخطيط استراتيجي" },
-    { id: "تقارير مالية", label: "تقارير مالية" }
+    { id: "all", label: t('categoryFilters.all') },
+    { id: t('categories.advanced'), label: t('categories.advanced') },
+    { id: t('categories.wealth'), label: t('categories.wealth') },
+    { id: t('categories.banking'), label: t('categories.banking') },
+    { id: t('categories.analysis'), label: t('categories.analysis') },
+    { id: t('categories.planning'), label: t('categories.planning') },
+    { id: t('categories.reporting'), label: t('categories.reporting') }
   ];
 
   const filteredServices = activeCategory === "all" 
@@ -137,7 +139,7 @@ export default function FinancialServicesPage() {
         <div className="absolute inset-0 z-10" />
         <Image
           src="/subhero.png"
-          alt="المكتبة الرقمية"
+          alt={t('pageTitle')}
           fill
           className="object-cover"
           priority
@@ -145,15 +147,15 @@ export default function FinancialServicesPage() {
         />
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] bg-white/20 backdrop-blur-[40px] rounded-[40px] flex flex-col items-center justify-center py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8 gap-4 sm:gap-6 md:gap-8 z-20">
           <div className="flex flex-row-reverse items-center gap-[6px] h-[14px]">
-            <span className="text-white text-[12px] sm:text-[14px] font-semibold leading-[14px]">المكتبة الرقمية</span>
+            <span className="text-white text-[12px] sm:text-[14px] font-semibold leading-[14px]">{t('pageTitle')}</span>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.16683 3.5L4.66683 7L8.16683 10.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <Link href="/">         
-              <span className="text-white text-[12px] sm:text-[14px] font-semibold leading-[14px]">الرئيــسية</span>
+              <span className="text-white text-[12px] sm:text-[14px] font-semibold leading-[14px]">{t('breadcrumbs.home')}</span>
             </Link>
           </div>
-          <h1 className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.2] text-center">المكتبة الرقمية</h1>
+          <h1 className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.2] text-center">{t('pageTitle')}</h1>
         </div>
       </section>
 
@@ -163,16 +165,16 @@ export default function FinancialServicesPage() {
           <div className="flex flex-col items-center gap-8 lg:gap-12">
             <div className="flex items-center gap-5">
               <div className="bg-[rgba(5,80,159,0.1)] rounded-[40px] px-5 py-[10px]">
-                <span className="text-[#05509F] text-[14px] font-bold">المكتبة</span>
+                <span className="text-[#05509F] text-[14px] font-bold">{t('sectionBadge')}</span>
               </div>
             </div>
 
             <h2 className="text-[#05509F] text-3xl sm:text-4xl lg:text-[52px] font-extrabold leading-tight lg:leading-[53px] text-center">
-              المكتبة الرقمية
+              {t('sectionTitle')}
             </h2>
 
             <p className="text-[#475467] text-lg font-medium leading-8 text-center max-w-[800px]">
-              نقدم مجموعة شاملة من المكتبة الرقمية المصممة خصيصاً لتلبية احتياجات عملائنا وتحقيق أهدافهم المالية في بيئة الأعمال المتغيرة.
+              {t('sectionDescription')}
             </p>
 
             <div className="flex items-center gap-3 flex-wrap justify-center">
@@ -242,7 +244,7 @@ export default function FinancialServicesPage() {
                     asChild
                   >
                     <a href={service.link}>
-                      معرفة المزيد
+                      {t('learnMore')}
                       <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
                         <path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
@@ -256,7 +258,7 @@ export default function FinancialServicesPage() {
           <div className="flex justify-center mt-16">
        <Link href="/services">
        <Button className="bg-[#EC2127] hover:bg-[#EC2127]/90 rounded-[40px] h-[58px] px-8 text-white font-bold text-base gap-2">
-              عرض المزيد من الخدمات
+              {t('viewMoreServices')}
               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -274,7 +276,7 @@ export default function FinancialServicesPage() {
       <FaqSection />
       <PartnersSection />
       <ContactSection />
-      <Footer />
+
     </div>
   );
 }

@@ -10,8 +10,14 @@ import TestimonialsSection from "@/components/testimonials-section";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import ContactSection from "@/components/contact-section";
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 export default function HiringPage() {
+  const t = useTranslations('hiring');
+  const locale = useLocale();
+  const isRTL = locale === 'ar';
+  
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -40,7 +46,7 @@ export default function HiringPage() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="w-full h-full pb-16">
         <Header />
       </div>
@@ -50,7 +56,7 @@ export default function HiringPage() {
         <div className="absolute inset-0 z-10" />
         <Image
           src="/subhero.png"
-          alt="التوظيف والدورات التدريبية"
+          alt={t('pageTitle')}
           fill
           className="object-cover"
           priority
@@ -58,15 +64,15 @@ export default function HiringPage() {
         />
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] bg-white/20 backdrop-blur-[40px] rounded-[40px] flex flex-col items-center justify-center py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8 gap-4 sm:gap-6 md:gap-8 z-20">
           <div className="flex flex-row-reverse items-center gap-[6px] h-[14px]">
-            <span className="text-white text-[12px] sm:text-[14px] font-semibold leading-[14px]">التوظيف</span>
+            <span className="text-white text-[12px] sm:text-[14px] font-semibold leading-[14px]">{t('breadcrumbs.hiring')}</span>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.16683 3.5L4.66683 7L8.16683 10.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <Link href="/">         
-              <span className="text-white text-[12px] sm:text-[14px] font-semibold leading-[14px]">الرئيــسية</span>
+              <span className="text-white text-[12px] sm:text-[14px] font-semibold leading-[14px]">{t('breadcrumbs.home')}</span>
             </Link>
           </div>
-          <h1 className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.2] text-center">التوظيف والدورات التدريبية</h1>
+          <h1 className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.2] text-center">{t('pageTitle')}</h1>
         </div>
       </section>
 
@@ -90,10 +96,10 @@ export default function HiringPage() {
                     <path d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h2 className="text-primary text-[28px] font-bold">المسيرة المهنية</h2>
+                <h2 className="text-primary text-[28px] font-bold">{t('career.title')}</h2>
               </div>
               <p className="text-[#475467] text-lg leading-8 mb-6">
-                نحن نولي أهمية كبيرة للتعاون بين الفريق والقدرات الثقافية. إذا كنت ترغب في بناء مسيرتك المهنية في كابيتال سمارت، يرجى إرسال سيرتك الذاتية إلى
+                {t('career.description')}
                 <a href="mailto:careers@CapitalSmartFBP.com" className="text-primary font-bold hover:underline"> careers@CapitalSmartFBP.com</a>
               </p>
             </motion.div>
@@ -108,10 +114,10 @@ export default function HiringPage() {
                     <path d="M12 15L15 12M12 15L9 12M12 15V9M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h2 className="text-primary text-[28px] font-bold">التدريب</h2>
+                <h2 className="text-primary text-[28px] font-bold">{t('training.title')}</h2>
               </div>
               <p className="text-[#475467] text-lg leading-8 mb-6">
-                نحن نتعاون معك لفهم أهدافك وتطوير أدوات ودورات تدريبية مخصصة لتعزيز مهاراتك. إذا كنت ترغب في حجز دورة تدريبية في كابيتال سمارت، يرجى إرسال طلبك إلى
+                {t('training.description')}
                 <a href="mailto:careers@CapitalSmartFBP.com" className="text-primary font-bold hover:underline"> careers@CapitalSmartFBP.com</a>
               </p>
             </motion.div>
@@ -134,14 +140,14 @@ export default function HiringPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="text-primary text-[32px] md:text-[42px] font-extrabold mb-6">
-                فريقنا
+                {t('team.title')}
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 className="text-[#475467] text-lg leading-8 max-w-2xl mx-auto">
-                تميز شركتنا هو انعكاس مباشر للموهبة الاستثنائية داخل فريقنا. يضم مكتبنا مجموعة مختارة من المهنيين المؤهلين ذوي الخبرات المتنوعة في المحاسبة والمالية والإدارة.
+                {t('team.description')}
               </motion.p>
             </div>
 
@@ -160,13 +166,13 @@ export default function HiringPage() {
                   </svg>
                 </div>
                 
-                <h3 className="text-primary text-[24px] font-bold mb-2">سامح سعيد عبد الفتاح، CMA</h3>
-                <p className="text-[#475467] text-lg mb-6">المؤسس والرئيس التنفيذي</p>
+                <h3 className="text-primary text-[24px] font-bold mb-2">{t('teamMember.name')}</h3>
+                <p className="text-[#475467] text-lg mb-6">{t('teamMember.position')}</p>
                 
                 <div className="w-full max-w-[600px] bg-[#FAFAFA] rounded-2xl p-6">
-                  <h4 className="text-primary text-[20px] font-bold mb-4">الخبرات المهنية والأكاديمية:</h4>
+                  <h4 className="text-primary text-[20px] font-bold mb-4">{t('teamMember.experienceTitle')}</h4>
                   <ul className="list-disc list-inside text-[#475467] text-lg leading-8">
-                    <li>أكثر من 16 عاماً من الخبرة في الأعمال والتمويل المؤسسي والاستشارات المالية.</li>
+                    <li>{t('teamMember.experience')}</li>
                   </ul>
                 </div>
               </div>
@@ -179,7 +185,7 @@ export default function HiringPage() {
       <FaqSection />
       <PartnersSection />
       <ContactSection />
-      <Footer />
+
     </div>
   );
 }

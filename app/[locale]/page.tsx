@@ -30,7 +30,7 @@ export default function Home() {
       <LibrarySection />
       <TestimonialsSection />
       <FaqSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <ContactSection />
       {/* <Footer /> */}
       {/* Note: Remove this from page.tsx since we'll add it to layout.tsx instead */}

@@ -44,14 +44,31 @@
     "modernization": "Modernization"
   },
   "contact": {
-    "title": "Contact Us",
-    "name": "Name",
+"contactUs": "Contact Us",
+    "heading": "We're always here to answer any questions you may have",
     "email": "Email",
-    "message": "Message",
-    "send": "Send Message"
+    "mobile": "Mobile Phone",
+    "phone": "Phone",
+    "workingHours": "Working-Hours",
+    "hours": "8:00 AM - 5:00 PM",
+    "weekend": "Friday and Saturday closed"
   },
   "footer": {
-    "copyright": "© 2024 Capital Smart. All rights reserved."
+"logoAlt": "Emaar United Elevators Logo",
+    "description": "We provide strategic advice for making informed investment decisions. We prioritize business compliance with laws and standards to protect investments.",
+    "companyProfile": "Company Profile",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About Us",
+    "services": "Our Services",
+    "library": "Library",
+    "help": "Help",
+    "jobsTraining": "Jobs & Training",
+    "bookConsultation": "Book Consultation",
+    "contactUs": "Contact Us",
+    "followUs": "Follow Us",
+    "developedBy": "Developed with excellence by",
+    "copyright": "All rights reserved to Emaar United Elevators - Capital Smart financial consultants"    
   },
   "whyUs": {
     "badge": "Why Us?",
@@ -232,5 +249,346 @@
         }
       ]
     }
+  },
+  "library": {
+    "pageTitle": "Digital Library",
+    "breadcrumbs": {
+      "home": "Home"
+    },
+    "sectionBadge": "Library",
+    "sectionTitle": "Digital Library",
+    "sectionDescription": "We offer a comprehensive digital library designed specifically to meet the needs of our clients and achieve their financial goals in a changing business environment.",
+    "categoryFilters": {
+      "all": "All"
+    },
+    "categories": {
+      "advanced": "Advanced Consulting",
+      "wealth": "Wealth Management",
+      "banking": "Banking Services",
+      "analysis": "Advanced Analysis",
+      "planning": "Strategic Planning",
+      "reporting": "Financial Reporting"
+    },
+    "learnMore": "Learn More",
+    "viewMoreServices": "View More Services",
+    "services": {
+      "service1": {
+        "title": "Advanced Financial Consulting",
+        "description": "Comprehensive consulting solutions that help companies achieve sustainable growth and improve financial performance through innovative strategies.",
+        "features": {
+          "feature1": "Advanced financial analysis",
+          "feature2": "Long-term strategic planning",
+          "feature3": "Financial structure optimization",
+          "feature4": "Asset and investment management"
+        }
+      },
+      "service2": {
+        "title": "Wealth and Investment Management",
+        "description": "Specialized services in wealth management and investment portfolio diversification to achieve maximum returns with risk management.",
+        "features": {
+          "feature1": "Personal investment planning",
+          "feature2": "Investment portfolio management",
+          "feature3": "Global market analysis",
+          "feature4": "Risk and return assessment"
+        }
+      },
+      "service3": {
+        "title": "Investment Banking Services",
+        "description": "Comprehensive investment banking solutions for companies and individuals, including financing, investment, and liquidity management.",
+        "features": {
+          "feature1": "Advanced financing services",
+          "feature2": "Liquidity and cash flow management",
+          "feature3": "IPO and subscription services",
+          "feature4": "Debt management and financing"
+        }
+      },
+      "service4": {
+        "title": "Advanced Financial and Investment Analysis",
+        "description": "In-depth financial analysis and comprehensive investment reports that help make informed investment decisions.",
+        "features": {
+          "feature1": "Financial market analysis",
+          "feature2": "Investment and opportunity assessment",
+          "feature3": "Financial risk analysis",
+          "feature4": "Customized investment recommendations"
+        }
+      },
+      "service5": {
+        "title": "Strategic Financial Planning",
+        "description": "Strategic financial planning services that help companies and individuals achieve their long-term financial goals.",
+        "features": {
+          "feature1": "Comprehensive financial planning",
+          "feature2": "Financial risk management",
+          "feature3": "Tax and investment planning",
+          "feature4": "Financial performance evaluation"
+        }
+      },
+      "service6": {
+        "title": "Financial Reporting Services",
+        "description": "Preparation and analysis of specialized financial reports according to local and international standards.",
+        "features": {
+          "feature1": "Financial statement preparation",
+          "feature2": "Financial ratio analysis",
+          "feature3": "Financial performance evaluation",
+          "feature4": "Customized company reports"
+        }
+      }
+    }
+  },
+  "librarySection": {
+    "sectionBadge": "Library and Articles",
+    "sectionTitle": "Latest Articles and Financial Resources",
+    "sectionDescription": "Discover a collection of articles and financial resources that help you make informed financial decisions and develop your business.",
+    "readMore": "Read More",
+    "viewMoreArticles": "View More Articles",
+    "categoryFilters": {
+      "all": "All"
+    },
+    "categories": {
+      "investment": "Investment",
+      "management": "Management",
+      "planning": "Planning",
+      "digital": "Digital",
+      "risk": "Risk",
+      "merger": "Merger"
+    },
+    "articles": {
+      "article1": {
+        "title": "The Importance of Financial Consulting in Investment Decision Making",
+        "description": "How financial consulting can help make informed investment decisions and achieve financial success.",
+        "date": "March 15, 2024"
+      },
+      "article2": {
+        "title": "The Role of Virtual CFO in Business Development",
+        "description": "Explore how a Virtual CFO can contribute to business growth and development.",
+        "date": "March 10, 2024"
+      },
+      "article3": {
+        "title": "Financial Planning Fundamentals for Startups",
+        "description": "A comprehensive guide to effective financial planning for startups and entrepreneurs.",
+        "date": "March 5, 2024"
+      },
+      "article4": {
+        "title": "Digital Transformation in the Financial Sector",
+        "description": "How digital transformation is changing the future of financial and advisory services.",
+        "date": "March 1, 2024"
+      },
+      "article5": {
+        "title": "Financial Risk Management Amid Economic Challenges",
+        "description": "Effective strategies for managing financial risks in changing economic environments.",
+        "date": "February 25, 2024"
+      },
+      "article6": {
+        "title": "The Importance of Due Diligence in Mergers and Acquisitions",
+        "description": "The role of due diligence in ensuring successful mergers and acquisitions.",
+        "date": "February 20, 2024"
+      }
+    }
+  },
+  "testimonials": {
+    "badge": "Reviews",
+    "title": "What Our Clients Say About Us!",
+    "subtitle": "Become a client now",
+    "ctaButton": "Become a Client",
+    "items": [
+      {
+        "name": "Ahmed Al-Sudairi",
+        "type": "Hotel",
+        "content": "Financial consulting provided us with a clear vision for the future of our business. The advice was strategic and helped us achieve significant revenue growth.",
+        "date": "March 14, 2025",
+        "location": "Jeddah - Saudi Arabia"
+      },
+      {
+        "name": "Sarah Al-Qahtani",
+        "type": "Institution",
+        "content": "The financial consulting we received was highly professional. It helped us improve cash flow management and increase the efficiency of financial operations.",
+        "date": "March 14, 2025",
+        "location": "Dubai - United Arab Emirates"
+      },
+      {
+        "name": "Mohammed Al-Otaibi",
+        "type": "Company",
+        "content": "Thanks to specialized financial consulting, we were able to improve our cost structure and significantly increase profit margins. Excellent service and valuable recommendations.",
+        "date": "March 14, 2025",
+        "location": "Cairo - Arab Republic of Egypt"
+      }
+    ]
+  },
+  "consultationForm": {
+    "title": "Book a Consultation",
+    "subtitle": "Get expert business advice and services.",
+    "freeConsultation": {
+      "title": "Free Virtual Consultation",
+      "description": "Book some time with us to discuss how we can serve your community! Duration: 30 minutes · Price: Free"
+    },
+    "successMessage": "Form submitted successfully! We will contact you soon.",
+    "submitError": "An error occurred while submitting the form. Please try again.",
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Mobile Phone",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your needs or questions..."
+    },
+    "errors": {
+      "firstName": {
+        "required": "Please enter your first name",
+        "tooShort": "First name must be more than 2 characters"
+      },
+      "lastName": {
+        "required": "Please enter your last name",
+        "tooShort": "Last name must be more than 2 characters"
+      },
+      "email": {
+        "required": "Please enter your email",
+        "invalid": "Invalid email format. Example: example@domain.com"
+      },
+      "phone": {
+        "required": "Please enter your phone number",
+        "invalid": "Invalid phone number. Must be between 10 and 15 digits"
+      },
+      "message": {
+        "required": "Please enter your message",
+        "tooShort": "Message must be more than 10 characters",
+        "tooLong": "Message must be less than 500 characters"
+      }
+    },
+    "submit": "Submit",
+    "submitting": "Submitting..."
+  },
+  "hiring": {
+    "pageTitle": "Hiring and Training Courses",
+    "breadcrumbs": {
+      "home": "Home",
+      "hiring": "Hiring"
+    },
+    "career": {
+      "title": "Career",
+      "description": "We place great importance on team collaboration and cultural capabilities. If you want to build your career at Capital Smart, please send your resume to"
+    },
+    "training": {
+      "title": "Training",
+      "description": "We work with you to understand your goals and develop customized training tools and courses to enhance your skills. If you would like to book a training course at Capital Smart, please send your request to"
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "The excellence of our company is a direct reflection of the exceptional talent within our team. Our office includes a select group of qualified professionals with diverse experiences in accounting, finance, and management."
+    },
+    "teamMember": {
+      "name": "Sameh Said Abdel Fattah, CMA",
+      "position": "Founder and CEO",
+      "experienceTitle": "Professional and Academic Experience:",
+      "experience": "More than 16 years of experience in business, corporate finance, and financial consulting."
+    }
+  },
+  "financialPage": {
+    "pageTitle": "Financial Consulting",
+    "breadcrumbs": {
+      "home": "Home",
+      "financial": "Financial Consulting"
+    },
+    "heroTitle": "Specialized Financial Consulting"
+  },
+  "servicesPage": {
+    "pageTitle": "Our Services",
+    "breadcrumbs": {
+      "home": "Home",
+      "services": "Services"
+    },
+    "heroTitle": "Comprehensive Business Services"
+  },
+  "contactPage": {
+    "pageTitle": "Contact Us",
+    "breadcrumbs": {
+      "home": "Home",
+      "contact": "Contact Us"
+    },
+    "heroTitle": "Get In Touch"
+  },
+  "aboutPage": {
+    "pageTitle": "About Us",
+    "breadcrumbs": {
+      "home": "Home",
+      "about": "About Us"
+    },
+    "heroTitle": "Who We Are",
+    "aboutUs": {
+      "badge": "About the Institution",
+      "title": "Who Are We?",
+      "imageAlt": "About Us Image",
+      "paragraph1": "We are a specialized financial consulting company providing professional financial consulting for Egyptian businesses and GCC countries. Our services are designed by financial experts, ensuring reliable outsourced accounting and financial services, helping clients develop enhanced business strategies.",
+      "paragraph2": "Our unique approach goes beyond traditional business, offering a comprehensive range of services to meet all client needs. Through collaboration and innovation, we aim to drive growth and excellence. Our key business units include: Consulting, Legal and Tax, Audit and Accounting, ERP Implementation, Digital Transformation, and Strategy."
+    },
+    "vision": {
+      "badge": "Vision",
+      "title": "Our Vision",
+      "imageAlt": "Vision Image",
+      "description": "Our vision is to become a leading professional consulting firm in Egypt, Saudi Arabia, and the Middle East, providing high-level financial and business services aligned with our values and highest quality standards to meet our clients' needs and ensure long-term success for local and foreign businesses."
+    },
+    "mission": {
+      "badge": "Mission",
+      "title": "Our Mission",
+      "imageAlt": "Mission Image",
+      "description": "Our mission is to help organizations move their mission and strategy forward. We simplify your operations while improving the service experience for all stakeholders and enhancing the sustainability of our strategic relationships and providing value-added services to our clients."
+    },
+    "values": {
+      "badge": "Values",
+      "title": "Our Values",
+      "imageAlt": "Values Image",
+      "items": {
+        "0": "Integrity and Accuracy",
+        "1": "Quality and Motivation",
+        "2": "Care and Transparency",
+        "3": "Commitment and Confidentiality"
+      }
+    },
+    "ceo": {
+      "badge": "CEO Message",
+      "name": "Mr. Sameh Said Abdel Fattah",
+      "imageAlt": "CEO Image",
+      "paragraph1": "Capital Smart has established a trusted reputation known for providing customized solutions for diverse business needs. Our services target both local and foreign businesses looking to invest in the Egyptian and Saudi markets, where we provide a mix of business expertise, extensive experience, local insights, networking capabilities, and strategic guidance to ensure our clients' success in their endeavors.",
+      "paragraph2": "We work to accelerate business development in emerging markets, and reduce investment risks by leveraging promising opportunities that align with Vision 2030 initiatives.",
+      "shortName": "Sameh Said",
+      "position": "CEO"
+    }
+  },
+  "faqSection": {
+    "faq":"FAQ",
+    "heading":"We're always here to answer any questions you may have",
+    "q&s":"Your Questions And Our Answers",
+    "faqItems": [
+      {
+        "question": "What financial consulting services do you offer?",
+        "answer": "We offer a comprehensive range of financial consulting services including personal financial planning, investment management, tax planning, and retirement planning."
+      },
+      {
+        "question": "How can I determine my financial consulting needs?",
+        "answer": "We conduct a comprehensive analysis of your current financial situation, future goals, and risk tolerance to determine the best services for you."
+      },
+      {
+        "question": "What is the duration of a financial consultation session?",
+        "answer": "The consultation session lasts between 60-90 minutes, and follow-up sessions may be required depending on the complexity of the case."
+      },
+      {
+        "question": "Do you offer financial consulting for small businesses?",
+        "answer": "Yes, we offer specialized consulting services for small businesses including financial planning, cash flow management, and performance improvement."
+      },
+      {
+        "question": "What is the cost of financial consulting services?",
+        "answer": "The cost varies depending on the type of service and the complexity of the case. We offer flexible pricing plans to suit different budgets."
+      },
+      {
+        "question": "Do you offer remote financial consultations?",
+        "answer": "Yes, we offer online financial consultations through secure and convenient virtual sessions for clients."
+      },
+      {
+        "question": "What are the qualifications of your financial consultants?",
+        "answer": "Our consultants hold accredited certifications and have extensive experience in the financial field, committed to high ethical and professional standards."
+      },
+      {
+        "question": "How can I start getting financial consultation?",
+        "answer": "You can contact us via phone or email to schedule a free initial appointment to discuss your financial needs."
+      }
+    ]
   }
 }

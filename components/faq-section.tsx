@@ -1,43 +1,44 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from 'next-intl';
 
 export default function FaqSection() {
+  const t = useTranslations('faqSection');
   const [openItem, setOpenItem] = useState(0)
 
   const faqItems = [
-
     {
-      question: "ما هي الخدمات الاستشارية المالية التي تقدمونها؟",
-      answer: "نقدم مجموعة شاملة من الخدمات الاستشارية المالية تشمل التخطيط المالي الشخصي، إدارة الاستثمارات، التخطيط الضريبي، والتخطيط للتقاعد."
+      question: t('faqItems.0.question'),
+      answer: t('faqItems.0.answer')
     },
     {
-      question: "كيف يمكنني تحديد احتياجاتي الاستشارية المالية؟",
-      answer: "نقوم بإجراء تحليل شامل للوضع المالي الحالي، الأهداف المستقبلية، وتحمل المخاطر لتحديد أفضل الخدمات المناسبة لك."
+      question: t('faqItems.1.question'),
+      answer: t('faqItems.1.answer')
     },
     {
-      question: "ما هي مدة جلسة الاستشارة المالية؟",
-      answer: "تتراوح مدة الجلسة الاستشارية بين 60-90 دقيقة، وقد تتطلب جلسات متابعة حسب تعقيد الحالة."
+      question: t('faqItems.2.question'),
+      answer: t('faqItems.2.answer')
     },
     {
-      question: "هل تقدمون استشارات مالية للشركات الصغيرة؟",
-      answer: "نعم، نقدم خدمات استشارية متخصصة للشركات الصغيرة تشمل التخطيط المالي، إدارة التدفق النقدي، وتحسين الأداء المالي."
+      question: t('faqItems.3.question'),
+      answer: t('faqItems.3.answer')
     },
     {
-      question: "ما هي تكلفة الخدمات الاستشارية المالية؟",
-      answer: "تختلف التكلفة حسب نوع الخدمة ومدى تعقيد الحالة. نقدم خطط أسعار مرنة تناسب مختلف الميزانيات."
+      question: t('faqItems.4.question'),
+      answer: t('faqItems.4.answer')
     },
     {
-      question: "هل تقدمون استشارات مالية عن بعد؟",
-      answer: "نعم، نقدم استشارات مالية عبر الإنترنت من خلال جلسات افتراضية آمنة ومريحة للعملاء."
+      question: t('faqItems.5.question'),
+      answer: t('faqItems.5.answer')
     },
     {
-      question: "ما هي مؤهلات المستشارين الماليين لديكم؟",
-      answer: "يتمتع مستشارونا بشهادات معتمدة وخبرة واسعة في المجال المالي، مع التزامهم بالمعايير الأخلاقية والمهنية العالية."
+      question: t('faqItems.6.question'),
+      answer: t('faqItems.6.answer')
     },
     {
-      question: "كيف يمكنني البدء في الحصول على استشارة مالية؟",
-      answer: "يمكنك التواصل معنا عبر الهاتف أو البريد الإلكتروني لتحديد موعد أولي مجاني لمناقشة احتياجاتك المالية."
+      question: t('faqItems.7.question'),
+      answer: t('faqItems.7.answer')
     }
   ]
 
@@ -47,15 +48,15 @@ export default function FaqSection() {
         <div className="flex flex-col items-center gap-12 max-w-[813px] mx-auto">
           <div className="flex items-center gap-5">
             <div className="bg-primary/10 rounded-[40px] py-[10px] px-4 flex items-center">
-              <span className="text-primary font-bold text-xs sm:text-sm">الاسئلة الشــائعة</span>
+              <span className="text-primary font-bold text-xs sm:text-sm"> {t('faq')}</span>
             </div>
           </div>
 
-          <h2 className="text-primary text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-extrabold leading-tight sm:leading-[53px] text-right">
-            استفسارات متكررة وإجابات واضحة !.
+          <h2 className="text-primary text-3xl sm:text-4xl md:text-5xl  font-extrabold leading-tight sm:leading-[33px] text-center">
+            {t('heading')}
           </h2>
 
-          <p className="text-black text-base sm:text-lg font-medium leading-8 sm:leading-10">أسئلتكم، وإجاباتنا</p>
+          <p className="text-black text-base sm:text-lg font-medium leading-8 sm:leading-10"> {t('q&s')} </p>
         </div>
 
         <div className="flex flex-col gap-3 mt-16 max-w-[1720px] mx-auto">

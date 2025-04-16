@@ -3,40 +3,43 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-
-const testimonials = [
-  {
-    name: "أحمد السديري",
-    type: "فندق",
-    rating: 5.0,
-    content: "قدمت لنا الاستشارات المالية رؤية واضحة لمستقبل أعمالنا. كانت النصائح استراتيجية وساعدتنا في تحقيق نمو كبير في الإيرادات.",
-    date: "14 مارس 2025",
-    location: "جدة – المملكة العربية السعودية",
-    flag: "🇸🇦"
-  },
-  {
-    name: "سارة القحطاني",
-    type: "مؤسسة",
-    rating: 5.0,
-    content: "الاستشارات المالية التي تلقيناها كانت محترفة للغاية. ساعدتنا في تحسين إدارة التدفق النقدي وزيادة كفاءة العمليات المالية.",
-    date: "14 مارس 2025",
-    location: "دبي – الإمارات العربية المتحدة",
-    flag: "🇦🇪"
-  },
-  {
-    name: "محمد العتيبي",
-    type: "شركــة",
-    rating: 5.0,
-    content: "بفضل الاستشارات المالية المتخصصة، استطعنا تحسين هيكل التكاليف وزيادة هوامش الربح بشكل ملحوظ. خدمة ممتازة وتوصيات قيمة.",
-    date: "14 مارس 2025",
-    location: "القاهرة – جمهورية مصر العربية",
-    flag: "🇪🇬"
-  }
-]
+import { useTranslations } from "next-intl"
 
 export default function TestimonialsSection() {
+  const t = useTranslations('testimonials');
+  
+  const testimonials = [
+    {
+      name: t('items.0.name'),
+      type: t('items.0.type'),
+      rating: 5.0,
+      content: t('items.0.content'),
+      date: t('items.0.date'),
+      location: t('items.0.location'),
+      flag: "🇸🇦"
+    },
+    {
+      name: t('items.1.name'),
+      type: t('items.1.type'),
+      rating: 5.0,
+      content: t('items.1.content'),
+      date: t('items.1.date'),
+      location: t('items.1.location'),
+      flag: "🇦🇪"
+    },
+    {
+      name: t('items.2.name'),
+      type: t('items.2.type'),
+      rating: 5.0,
+      content: t('items.2.content'),
+      date: t('items.2.date'),
+      location: t('items.2.location'),
+      flag: "🇪🇬"
+    }
+  ]
+
   return (
-    <section className="py-16 lg:py-24 container mx-auto px-4 md:px-8 lg:px-[100px]" id="testimonials" dir="rtl">
+    <section className="py-16 lg:py-24 container mx-auto px-4 md:px-8 lg:px-[100px]" id="testimonials" >
       {/* Header */}
       <div className="flex flex-col items-center gap-6 lg:gap-12 max-w-[582px] mx-auto">
         <motion.div 
@@ -45,7 +48,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.5 }}
           className="bg-[#EBF5FF] rounded-[40px] py-[10px] px-6 flex items-center"
         >
-          <span className="text-[#003B95] font-bold text-sm">التقييمات</span>
+          <span className="text-[#003B95] font-bold text-sm">{t('badge')}</span>
         </motion.div>
 
         <motion.h4 
@@ -54,7 +57,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-[#003B95] text-3xl md:text-4xl lg:text-[42px] font-extrabold leading-tight lg:leading-[64px] text-center"
         >
-          مــاذا يقــول عملاؤنا عنا !.
+          {t('title')}
         </motion.h4>
 
         <motion.p 
@@ -63,7 +66,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-black text-base lg:text-lg font-medium leading-relaxed lg:leading-10 text-center"
         >
-          كن عميلا الان
+          {t('subtitle')}
         </motion.p>
       </div>
 
@@ -106,7 +109,7 @@ export default function TestimonialsSection() {
 
             <div className="flex justify-between items-center w-full relative z-10">
               <div className="flex items-center gap-2">
-                <span className="text-2xl">{testimonial.flag}</span>
+                {/* <span className="text-2xl">{testimonial.flag}</span> */}
                 <span className="text-[#003B95] text-sm lg:text-base font-extrabold">{testimonial.location}</span>
               </div>
               <span className="text-[#747474] text-xs font-medium">{testimonial.date}</span>
@@ -126,7 +129,7 @@ export default function TestimonialsSection() {
           <Button 
             className="bg-[#E31E24] hover:bg-[#E31E24]/90 rounded-[40px] h-[60px] lg:h-[70px] px-8 text-white font-bold text-base transition-colors group"
           >
-            كن عميلا
+            {t('ctaButton')}
             <img src="/vector.png" alt="arrow-right" className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
         </Link>

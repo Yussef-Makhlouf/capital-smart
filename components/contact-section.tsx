@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button"
+import { useTranslations } from 'next-intl'
 
 export default function ContactSection() {
+  const t = useTranslations('contact')
+
   return (
     <section className="relative py-12 w-full overflow-hidden bg-[#FAFAFA]">
       <div className="container mx-auto px-4 lg:px-[100px] relative z-10">
@@ -9,13 +12,13 @@ export default function ContactSection() {
           <div className="flex flex-col items-start gap-10 order-2 lg:order-1 w-full">
             <div className="flex items-start gap-5 w-full">
               <div className="bg-[#EBF2F9] rounded-[40px] py-[10px] px-6">
-                <span className="text-primary font-bold text-sm sm:text-base">اتصل بنا</span>
+                <span className="text-primary font-bold text-sm sm:text-base">{t('contactUs')}</span>
               </div>
             </div>
 
-            <div className="space-y-10 text-right w-full">
-              <h2 className="text-primary text-xl sm:text-2xl md:text-3xl lg:text-[42px] font-extrabold leading-[1.8]">
-                نحن هنا دائماً للإجابة على أي أسئلة قد تكون لديك
+            <div className="space-y-10  w-full">
+              <h2 className="text-primary text-xl sm:text-2xl md:text-3xl lg:text-[32px]  leading-[1.8]">
+                {t('heading')}
               </h2>
 
               <div className="space-y-6">
@@ -26,7 +29,7 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-primary font-bold text-lg">البريد الإلكتروني</h3>
+                    <h3 className="text-primary font-bold text-lg">{t('email')}</h3>
                     <p className="text-[#475467]">info@capital-smart.com</p>
                   </div>
                 </div>
@@ -38,7 +41,7 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-primary font-bold text-lg">الهاتف المحمول</h3>
+                    <h3 className="text-primary font-bold text-lg"> {t('mobile')}</h3>
                     <p className="text-[#475467]">+20 1029700534</p>
                   </div>
                 </div>
@@ -50,7 +53,7 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-primary font-bold text-lg">الهاتف</h3>
+                    <h3 className="text-primary font-bold text-lg">{t('phone')}</h3>
                     <p className="text-[#475467]">+02 01029700534</p>
                   </div>
                 </div>
@@ -62,9 +65,9 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-primary font-bold text-lg">ساعات العمل</h3>
-                    <p className="text-[#475467]">8:00 صباحاً - 5:00 مساءً</p>
-                    <p className="text-[#475467]">الجمعة والسبت مغلقة</p>
+                    <h3 className="text-primary font-bold text-lg"> {t('workingHours')}</h3>
+                    <p className="text-[#475467]">{t('hours')}</p>
+                    <p className="text-[#475467]">  {t('weekend')}</p>
                   </div>
                 </div>
               </div>

@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 interface FormErrors {
   firstName?: string;
@@ -13,6 +15,10 @@ interface FormErrors {
 }
 
 const ConsultationForm = () => {
+  const t = useTranslations('consultationForm');
+  const locale = useLocale();
+  const isRTL = locale === 'ar';
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -32,35 +38,35 @@ const ConsultationForm = () => {
     const phoneRegex = /^\+?[0-9]{10,15}$/;
 
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'الرجاء إدخال الاسم الأول';
+      newErrors.firstName = t('errors.firstName.required');
     } else if (formData.firstName.length < 2) {
-      newErrors.firstName = 'يجب أن يكون الاسم الأول أكثر من حرفين';
+      newErrors.firstName = t('errors.firstName.tooShort');
     }
 
     if (!formData.lastName.trim()) {
-      newErrors.lastName = 'الرجاء إدخال الاسم الأخير';
+      newErrors.lastName = t('errors.lastName.required');
     } else if (formData.lastName.length < 2) {
-      newErrors.lastName = 'يجب أن يكون الاسم الأخير أكثر من حرفين';
+      newErrors.lastName = t('errors.lastName.tooShort');
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'الرجاء إدخال البريد الإلكتروني';
+      newErrors.email = t('errors.email.required');
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'البريد الإلكتروني غير صحيح. مثال: example@domain.com';
+      newErrors.email = t('errors.email.invalid');
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = 'الرجاء إدخال رقم الهاتف';
+      newErrors.phone = t('errors.phone.required');
     } else if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = 'رقم الهاتف غير صحيح. يجب أن يكون بين 10 و 15 رقماً';
+      newErrors.phone = t('errors.phone.invalid');
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'الرجاء إدخال رسالتك';
+      newErrors.message = t('errors.message.required');
     } else if (formData.message.length < 10) {
-      newErrors.message = 'يجب أن تكون الرسالة أكثر من 10 أحرف';
+      newErrors.message = t('errors.message.tooShort');
     } else if (formData.message.length > 500) {
-      newErrors.message = 'يجب أن تكون الرسالة أقل من 500 حرف';
+      newErrors.message = t('errors.message.tooLong');
     }
 
     setErrors(newErrors);
@@ -90,11 +96,20 @@ const ConsultationForm = () => {
         });
         setErrors({});
         setSubmitSuccess(true);
+        
+        // Scroll to top to show success message
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } catch (error) {
         console.error('Error submitting form:', error);
-        setSubmitError('حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى.');
+        setSubmitError(t('submitError'));
       } finally {
         setIsSubmitting(false);
+      }
+    } else {
+      // Scroll to the first error
+      const firstErrorField = document.querySelector('.error-field');
+      if (firstErrorField) {
+        firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
   };
@@ -118,36 +133,84 @@ const ConsultationForm = () => {
     }
   };
 
+  useEffect(() => {
+    // Apply RTL or LTR styles to the form depending on the locale
+    const formContainer = document.getElementById('consultation-form-container');
+    if (formContainer) {
+      formContainer.dir = isRTL ? 'rtl' : 'ltr';
+    }
+  }, [isRTL]);
+
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">حجز استشارة</h2>
-        <p className="text-gray-600 mb-6">احصل على نصائح وخدمات تجارية من خبراء.</p>
+    <div id="consultation-form-container" dir={isRTL ? 'rtl' : 'ltr'} className="max-w-4xl mx-auto p-6 lg:p-10 bg-white rounded-2xl shadow-xl border border-gray-100">
+      <div className="text-center mb-10">
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-bold text-[#05509F] mb-4"
+        >
+          {t('title')}
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-gray-600 mb-8 max-w-2xl mx-auto"
+        >
+          {t('subtitle')}
+        </motion.p>
         
-        <div className="bg-blue-50 p-6 rounded-lg mb-8">
-          <h3 className="text-xl font-semibold text-blue-800 mb-2">استشارة افتراضية مجانية</h3>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="bg-blue-50 p-6 md:p-8 rounded-xl mb-8 border-l-4 border-[#05509F]"
+        >
+          <h3 className="text-xl font-semibold text-[#05509F] mb-3">{t('freeConsultation.title')}</h3>
           <p className="text-gray-700">
-            احجز بعض الوقت معنا لمناقشة كيف يمكننا خدمة مجتمعكم ! المدة: 30 دقيقة · السعر: مجاني
+            {t('freeConsultation.description')}
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {submitSuccess && (
-        <div className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg text-right">
-          تم إرسال النموذج بنجاح! سنتواصل معك قريباً.
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-8 p-5 bg-green-50 text-green-800 rounded-xl border border-green-200 flex items-center gap-3"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+          <span>{t('successMessage')}</span>
+        </motion.div>
       )}
 
       {submitError && (
-        <div className="mb-6 p-4 bg-red-100 text-red-800 rounded-lg text-right">
-          {submitError}
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-8 p-5 bg-red-50 text-red-800 rounded-xl border border-red-200 flex items-center gap-3"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>{submitError}</span>
+        </motion.div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="firstName" className="block text-right text-gray-700 mb-2">الاسم الأول</label>
+      <form onSubmit={handleSubmit} className="space-y-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+        >
+          <div className={errors.firstName ? 'error-field' : ''}>
+            <label htmlFor="firstName" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
+              {t('fields.firstName')}
+            </label>
             <div className="relative">
               <input
                 type="text"
@@ -155,24 +218,33 @@ const ConsultationForm = () => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                  errors.firstName ? 'border-red-500 pr-10' : 'border-gray-300'
-                }`}
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
+                  ${errors.firstName 
+                    ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
+                    : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+                  } ${isRTL ? 'text-right' : 'text-left'}`
+                }
                 required
+                placeholder={t('fields.firstName')}
               />
               {errors.firstName && (
-                <ExclamationCircleIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
+                </div>
               )}
             </div>
             {errors.firstName && (
-              <p className="text-red-500 text-sm mt-1 text-right flex items-center gap-1">
-                <ExclamationCircleIcon className="h-4 w-4" />
-                {errors.firstName}
+              <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
+                <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
+                <span>{errors.firstName}</span>
               </p>
             )}
           </div>
-          <div>
-            <label htmlFor="lastName" className="block text-right text-gray-700 mb-2">الاسم الأخير</label>
+          
+          <div className={errors.lastName ? 'error-field' : ''}>
+            <label htmlFor="lastName" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
+              {t('fields.lastName')}
+            </label>
             <div className="relative">
               <input
                 type="text"
@@ -180,26 +252,39 @@ const ConsultationForm = () => {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                  errors.lastName ? 'border-red-500 pr-10' : 'border-gray-300'
-                }`}
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
+                  ${errors.lastName 
+                    ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
+                    : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+                  } ${isRTL ? 'text-right' : 'text-left'}`
+                }
                 required
+                placeholder={t('fields.lastName')}
               />
               {errors.lastName && (
-                <ExclamationCircleIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
+                </div>
               )}
             </div>
             {errors.lastName && (
-              <p className="text-red-500 text-sm mt-1 text-right flex items-center gap-1">
-                <ExclamationCircleIcon className="h-4 w-4" />
-                {errors.lastName}
+              <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
+                <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
+                <span>{errors.lastName}</span>
               </p>
             )}
           </div>
-        </div>
+        </motion.div>
 
-        <div>
-          <label htmlFor="email" className="block text-right text-gray-700 mb-2">البريد الإلكتروني</label>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className={errors.email ? 'error-field' : ''}
+        >
+          <label htmlFor="email" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
+            {t('fields.email')}
+          </label>
           <div className="relative">
             <input
               type="email"
@@ -207,25 +292,38 @@ const ConsultationForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                errors.email ? 'border-red-500 pr-10' : 'border-gray-300'
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
+                ${errors.email 
+                  ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
+                  : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+                } ${isRTL ? 'text-right' : 'text-left'}`
+              }
               required
+              placeholder={t('fields.email')}
             />
             {errors.email && (
-              <ExclamationCircleIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
+              </div>
             )}
           </div>
           {errors.email && (
-            <p className="text-red-500 text-sm mt-1 text-right flex items-center gap-1">
-              <ExclamationCircleIcon className="h-4 w-4" />
-              {errors.email}
+            <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
+              <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
+              <span>{errors.email}</span>
             </p>
           )}
-        </div>
+        </motion.div>
 
-        <div>
-          <label htmlFor="phone" className="block text-right text-gray-700 mb-2">الهاتف المحمول</label>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className={errors.phone ? 'error-field' : ''}
+        >
+          <label htmlFor="phone" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
+            {t('fields.phone')}
+          </label>
           <div className="relative">
             <input
               type="tel"
@@ -233,62 +331,97 @@ const ConsultationForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                errors.phone ? 'border-red-500 pr-10' : 'border-gray-300'
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
+                ${errors.phone 
+                  ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
+                  : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+                } ${isRTL ? 'text-right' : 'text-left'}`
+              }
               required
+              placeholder={t('fields.phone')}
             />
             {errors.phone && (
-              <ExclamationCircleIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
+              </div>
             )}
           </div>
           {errors.phone && (
-            <p className="text-red-500 text-sm mt-1 text-right flex items-center gap-1">
-              <ExclamationCircleIcon className="h-4 w-4" />
-              {errors.phone}
+            <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
+              <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
+              <span>{errors.phone}</span>
             </p>
           )}
-        </div>
+        </motion.div>
 
-        <div>
-          <label htmlFor="message" className="block text-right text-gray-700 mb-2">الرسالة</label>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className={errors.message ? 'error-field' : ''}
+        >
+          <label htmlFor="message" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
+            {t('fields.message')}
+          </label>
           <div className="relative">
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              rows={4}
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                errors.message ? 'border-red-500 pr-10' : 'border-gray-300'
-              }`}
+              rows={5}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
+                ${errors.message 
+                  ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
+                  : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+                } ${isRTL ? 'text-right' : 'text-left'}`
+              }
               required
+              placeholder={t('fields.messagePlaceholder')}
             />
             {errors.message && (
-              <ExclamationCircleIcon className="absolute right-3 top-3 h-5 w-5 text-red-500" />
+              <div className="absolute top-3 right-3 pointer-events-none">
+                <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
+              </div>
             )}
           </div>
           {errors.message && (
-            <p className="text-red-500 text-sm mt-1 text-right flex items-center gap-1">
-              <ExclamationCircleIcon className="h-4 w-4" />
-              {errors.message}
+            <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
+              <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
+              <span>{errors.message}</span>
             </p>
           )}
-        </div>
+        </motion.div>
 
-        <motion.button
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          type="submit"
-          disabled={isSubmitting}
-          className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
-            isSubmitting
-              ? 'bg-gray-400 cursor-not-allowed'
-              : 'bg-blue-600 hover:bg-blue-700 text-white'
-          }`}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="pt-4"
         >
-          {isSubmitting ? 'جاري الإرسال...' : 'إرسال'}
-        </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            type="submit"
+            disabled={isSubmitting}
+            className={`w-full py-4 px-6 rounded-xl font-semibold text-white text-lg shadow-lg transition-all
+              ${isSubmitting
+                ? 'bg-gray-400 cursor-not-allowed'
+                : 'bg-[#05509F] hover:bg-[#034584] active:bg-[#023b70]'
+              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`
+            }
+          >
+            <span className="flex items-center justify-center gap-2">
+              {isSubmitting && (
+                <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              )}
+              {isSubmitting ? t('submitting') : t('submit')}
+            </span>
+          </motion.button>
+        </motion.div>
       </form>
     </div>
   );

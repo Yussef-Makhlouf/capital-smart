@@ -2,30 +2,38 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { useTranslation } from "@/lib/translations"
+import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 
 export default function WhyUs() {
-  const { t } = useTranslation();
+  const t = useTranslations('whyUs');
+  const locale = useLocale();
+  const isRTL = locale === 'ar';
+  
+  console.log('Badge:', t('badge'));
+  console.log('Title:', t('title'));
+  console.log('Description:', t('description'));
+  console.log('Company Name:', t('companyName'));
   
   return (
-    <section className="relative py-24 bg-[#FAFAFA]">
+    <section className="relative py-24 bg-[#FAFAFA]" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-[100px]">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-[87px]">
           {/* Left Content */}
           <div className="flex flex-col justify-center items-start gap-8 lg:gap-12 w-full lg:w-[813px]">
             <div className="flex flex-row items-center gap-5">
               <div className="bg-[rgba(5,80,159,0.1)] rounded-[40px] px-5 py-[10px]">
-                <span className="text-[#05509F] text-[14px] font-bold">{t("whyUs.badge")}</span>
+                <span className="text-[#05509F] text-[14px] font-bold">{t('badge')}</span>
               </div>
             </div>
             
             <h2 className="text-[#05509F] text-3xl sm:text-4xl lg:text-[52px] font-extrabold leading-tight lg:leading-[53px]">
-              {t("whyUs.title")}
+              {t('title')}
             </h2>
             
             <div className="flex flex-col gap-8 lg:gap-12 text-justify text-base sm:text-lg lg:text-[18px] leading-relaxed lg:leading-[40px] text-black">
               <p>
-                {t("whyUs.description")}
+                {t('description')}
               </p>
             </div>
 
@@ -41,7 +49,7 @@ export default function WhyUs() {
                   <path d="M17.485 5.44409L8.90412 14.025L6.19336 11.3142" stroke="#EC2127" strokeWidth="1.5" strokeMiterlimit="10"/>
                 </svg>
               </div>
-              <span className="text-white text-xl sm:text-2xl font-bold">{t("whyUs.companyName")}</span>
+              <span className="text-white text-xl sm:text-2xl font-bold">{t('companyName')}</span>
             </motion.div>
           </div>
 
