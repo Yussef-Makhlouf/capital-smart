@@ -13,27 +13,27 @@ export default function ProjectsSection({ showButton = true }: { showButton?: bo
   const services = [
     {
       key: 'accounting',
-      image: '/pro1.png'
+      image: '/profiles.png'
     },
     {
       key: 'supervision',
-      image: '/pro2.png'
+      image: '/profiles.png'
     },
     {
       key: 'virtualCFO',
-      image: '/pro3.png'
+      image: '/profiles.png'
     },
     {
       key: 'dueDiligence',
-      image: '/pro4.png'
+      image: '/profiles.png'
     },
     {
       key: 'zakatTax',
-      image: '/pro5.png'
+      image: '/profiles.png'
     },
     {
       key: 'management',
-      image: '/pro6.png'
+      image: '/profiles.png'
     }
   ]
 

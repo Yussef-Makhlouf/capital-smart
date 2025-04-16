@@ -61,7 +61,7 @@ export default function ServicesPage() {
       {/* Additional Sections */}
       <TestimonialsSection />
       <FaqSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <ContactSection />
     </div>
   );
