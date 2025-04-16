@@ -31,7 +31,7 @@ export default function Home() {
       <TestimonialsSection />
       <FaqSection />
       {/* <PartnersSection /> */}
-      <ContactSection />
+      <ContactSection  />
       {/* <Footer /> */}
       {/* Note: Remove this from page.tsx since we'll add it to layout.tsx instead */}
     </main>

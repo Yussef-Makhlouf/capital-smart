@@ -9,6 +9,7 @@ import { notFound } from 'next/navigation';
 
 const inter = Inter({ subsets: ['latin'] });
 import '../fonts/fonts.css';
+
 export const metadata: Metadata = {
   title: 'Capital Smart - Financial & Business Consulting',
   description: 'Your trusted partner in financial and business consulting services',
@@ -51,6 +52,7 @@ export default async function LocaleLayout({
             <div className="min-h-screen flex flex-col">
               <Header />
               {children}
+   
               <Footer />
             </div>
           </ThemeProvider>
