@@ -27,7 +27,7 @@ export default function LibrarySection() {
       description: t('articles.article1.description'),
       category: t('categories.investment'),
       date: t('articles.article1.date'),
-      image: "/article1.png",
+      image: "/cover.png",
       link: "/articles/investment-decisions"
     },
     {
@@ -36,7 +36,7 @@ export default function LibrarySection() {
       description: t('articles.article2.description'),
       category: t('categories.management'),
       date: t('articles.article2.date'),
-      image: "/article2.png",
+      image: "/cover.png",
       link: "/articles/virtual-cfo"
     },
     {
@@ -45,7 +45,7 @@ export default function LibrarySection() {
       description: t('articles.article3.description'),
       category: t('categories.planning'),
       date: t('articles.article3.date'),
-      image: "/article3.png",
+      image: "/cover.png",
       link: "/articles/financial-planning"
     },
     {
@@ -54,7 +54,7 @@ export default function LibrarySection() {
       description: t('articles.article4.description'),
       category: t('categories.digital'),
       date: t('articles.article4.date'),
-      image: "/article4.png",
+      image: "/cover.png",
       link: "/articles/digital-transformation"
     },
     {
@@ -63,7 +63,7 @@ export default function LibrarySection() {
       description: t('articles.article5.description'),
       category: t('categories.risk'),
       date: t('articles.article5.date'),
-      image: "/article5.png",
+      image: "/cover.png",
       link: "/articles/risk-management"
     },
     {
@@ -72,7 +72,7 @@ export default function LibrarySection() {
       description: t('articles.article6.description'),
       category: t('categories.merger'),
       date: t('articles.article6.date'),
-      image: "/article6.png",
+      image: "/cover.png",
       link: "/articles/mergers-acquisitions"
     }
   ]

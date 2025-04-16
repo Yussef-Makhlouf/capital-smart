@@ -57,43 +57,43 @@ export default function FinancialConsultationSection({ showButton = true }: { sh
 
   const tabContent: TabContent = {
     services: [
-      { id: 1, title: t('content.services.0.title'), image: "/financial1.png", description: t('content.services.0.description') },
-      { id: 2, title: t('content.services.1.title'), image: "/financial2.png", description: t('content.services.1.description') },
-      { id: 3, title: t('content.services.2.title'), image: "/financial3.png", description: t('content.services.2.description') },
-      { id: 4, title: t('content.services.3.title'), image: "/financial4.png", description: t('content.services.3.description') },
-      { id: 5, title: t('content.services.4.title'), image: "/financial5.png", description: t('content.services.4.description') },
-      { id: 6, title: t('content.services.5.title'), image: "/financial6.png", description: t('content.services.5.description') },
-      { id: 7, title: t('content.services.6.title'), image: "/financial7.png", description: t('content.services.6.description') },
-      { id: 8, title: t('content.services.7.title'), image: "/financial8.png", description: t('content.services.7.description') },
+      { id: 1, title: t('content.services.0.title'), image: "/profiles.png", description: t('content.services.0.description') },
+      { id: 2, title: t('content.services.1.title'), image: "/profiles.png", description: t('content.services.1.description') },
+      { id: 3, title: t('content.services.2.title'), image: "/profiles.png", description: t('content.services.2.description') },
+      { id: 4, title: t('content.services.3.title'), image: "/profiles.png", description: t('content.services.3.description') },
+      { id: 5, title: t('content.services.4.title'), image: "/profiles.png", description: t('content.services.4.description') },
+      { id: 6, title: t('content.services.5.title'), image: "/profiles.png", description: t('content.services.5.description') },
+      { id: 7, title: t('content.services.6.title'), image: "/profiles.png", description: t('content.services.6.description') },
+      { id: 8, title: t('content.services.7.title'), image: "/profiles.png", description: t('content.services.7.description') },
     ],
     steps: [
-      { id: 1, title: t('content.steps.0.title'), image: "/step1.png", description: t('content.steps.0.description') },
-      { id: 2, title: t('content.steps.1.title'), image: "/step2.png", description: t('content.steps.1.description') },
-      { id: 3, title: t('content.steps.2.title'), image: "/step3.png", description: t('content.steps.2.description') },
-      { id: 4, title: t('content.steps.3.title'), image: "/step4.png", description: t('content.steps.3.description') },
-      { id: 5, title: t('content.steps.4.title'), image: "/step5.png", description: t('content.steps.4.description') },
-      { id: 6, title: t('content.steps.5.title'), image: "/step6.png", description: t('content.steps.5.description') },
+      { id: 1, title: t('content.steps.0.title'), image: "/profiles.png", description: t('content.steps.0.description') },
+      { id: 2, title: t('content.steps.1.title'), image: "/profiles.png", description: t('content.steps.1.description') },
+      { id: 3, title: t('content.steps.2.title'), image: "/profiles.png", description: t('content.steps.2.description') },
+      { id: 4, title: t('content.steps.3.title'), image: "/profiles.png", description: t('content.steps.3.description') },
+      { id: 5, title: t('content.steps.4.title'), image: "/profiles.png", description: t('content.steps.4.description') },
+      { id: 6, title: t('content.steps.5.title'), image: "/profiles.png", description: t('content.steps.5.description') },
     ],
     benefits: [
-      { id: 1, title: t('content.benefits.0.title'), image: "/benefit1.png", description: t('content.benefits.0.description') },
-      { id: 2, title: t('content.benefits.1.title'), image: "/benefit2.png", description: t('content.benefits.1.description') },
-      { id: 3, title: t('content.benefits.2.title'), image: "/benefit3.png", description: t('content.benefits.2.description') },
-      { id: 4, title: t('content.benefits.3.title'), image: "/benefit4.png", description: t('content.benefits.3.description') },
-      { id: 5, title: t('content.benefits.4.title'), image: "/benefit5.png", description: t('content.benefits.4.description') },
+      { id: 1, title: t('content.benefits.0.title'), image: "/profiles.png", description: t('content.benefits.0.description') },
+      { id: 2, title: t('content.benefits.1.title'), image: "/profiles.png", description: t('content.benefits.1.description') },
+      { id: 3, title: t('content.benefits.2.title'), image: "/profiles.png", description: t('content.benefits.2.description') },
+      { id: 4, title: t('content.benefits.3.title'), image: "/profiles.png", description: t('content.benefits.3.description') },
+      { id: 5, title: t('content.benefits.4.title'), image: "/profiles.png", description: t('content.benefits.4.description') },
     ],
     tools: [
-      { id: 1, title: t('content.tools.0.title'), image: "/tool1.png", description: t('content.tools.0.description') },
-      { id: 2, title: t('content.tools.1.title'), image: "/tool2.png", description: t('content.tools.1.description') },
-      { id: 3, title: t('content.tools.2.title'), image: "/tool3.png", description: t('content.tools.2.description') },
-      { id: 4, title: t('content.tools.3.title'), image: "/tool4.png", description: t('content.tools.3.description') },
-      { id: 5, title: t('content.tools.4.title'), image: "/tool5.png", description: t('content.tools.4.description') },
+      { id: 1, title: t('content.tools.0.title'), image: "/profiles.png", description: t('content.tools.0.description') },
+      { id: 2, title: t('content.tools.1.title'), image: "/profiles.png", description: t('content.tools.1.description') },
+      { id: 3, title: t('content.tools.2.title'), image: "/profiles.png", description: t('content.tools.2.description') },
+      { id: 4, title: t('content.tools.3.title'), image: "/profiles.png", description: t('content.tools.3.description') },
+      { id: 5, title: t('content.tools.4.title'), image: "/profiles.png", description: t('content.tools.4.description') },
     ],
     reports: [
-      { id: 1, title: t('content.reports.0.title'), image: "/report1.png", description: t('content.reports.0.description') },
-      { id: 2, title: t('content.reports.1.title'), image: "/report2.png", description: t('content.reports.1.description') },
-      { id: 3, title: t('content.reports.2.title'), image: "/report3.png", description: t('content.reports.2.description') },
-      { id: 4, title: t('content.reports.3.title'), image: "/report4.png", description: t('content.reports.3.description') },
-      { id: 5, title: t('content.reports.4.title'), image: "/report5.png", description: t('content.reports.4.description') },
+      { id: 1, title: t('content.reports.0.title'), image: "/profiles.png", description: t('content.reports.0.description') },
+      { id: 2, title: t('content.reports.1.title'), image: "/profiles.png", description: t('content.reports.1.description') },
+      { id: 3, title: t('content.reports.2.title'), image: "/profiles.png", description: t('content.reports.2.description') },
+      { id: 4, title: t('content.reports.3.title'), image: "/profiles.png", description: t('content.reports.3.description') },
+      { id: 5, title: t('content.reports.4.title'), image: "/profiles.png", description: t('content.reports.4.description') },
     ]
   }
 
@@ -150,7 +150,7 @@ export default function FinancialConsultationSection({ showButton = true }: { sh
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-contain p-2 sm:p-3 lg:p-4"
+                    className="object-cover p-2 sm:p-3 lg:p-4"
                     loading="lazy"
                     sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, (max-width: 1280px) 25vw, 20vw"
                   />

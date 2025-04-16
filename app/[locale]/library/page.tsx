@@ -33,7 +33,7 @@ export default function FinancialServicesPage() {
       title: t('services.service1.title'),
       description: t('services.service1.description'),
       category: t('categories.advanced'),
-      image: "/service1.png",
+      image: "/cover.png",
       link: "/services/advanced-consulting",
       features: [
         t('services.service1.features.feature1'),
@@ -47,7 +47,7 @@ export default function FinancialServicesPage() {
       title: t('services.service2.title'),
       description: t('services.service2.description'),
       category: t('categories.wealth'),
-      image: "/service2.png",
+      image: "/cover.png",
       link: "/services/wealth-management",
       features: [
         t('services.service2.features.feature1'),
@@ -61,7 +61,7 @@ export default function FinancialServicesPage() {
       title: t('services.service3.title'),
       description: t('services.service3.description'),
       category: t('categories.banking'),
-      image: "/service3.png",
+      image: "/cover.png",
       link: "/services/investment-banking",
       features: [
         t('services.service3.features.feature1'),
@@ -75,7 +75,7 @@ export default function FinancialServicesPage() {
       title: t('services.service4.title'),
       description: t('services.service4.description'),
       category: t('categories.analysis'),
-      image: "/service4.png",
+      image: "/cover.png",
       link: "/services/advanced-analysis",
       features: [
         t('services.service4.features.feature1'),
@@ -89,7 +89,7 @@ export default function FinancialServicesPage() {
       title: t('services.service5.title'),
       description: t('services.service5.description'),
       category: t('categories.planning'),
-      image: "/service5.png",
+      image: "/cover.png",
       link: "/services/strategic-planning",
       features: [
         t('services.service5.features.feature1'),
@@ -103,7 +103,7 @@ export default function FinancialServicesPage() {
       title: t('services.service6.title'),
       description: t('services.service6.description'),
       category: t('categories.reporting'),
-      image: "/service6.png",
+      image: "/cover.png",
       link: "/services/financial-reporting",
       features: [
         t('services.service6.features.feature1'),

@@ -56,7 +56,7 @@ export default function WhyUs() {
           {/* Right Image */}
           <div className="w-full lg:w-[820px] h-[400px] sm:h-[500px] lg:h-[775px] relative rounded-[30px] sm:rounded-[50px] lg:rounded-[100px] overflow-hidden">
             <Image
-              src="/image-3.png"
+              src="/profiles.png"
               alt="Why Choose Us"
               fill
               className="object-cover"
