@@ -1,34 +1,35 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+'use client';
 
-const LanguageSwitcher = () => {
+import { usePathname, useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
+import { Button } from '@/components/ui/button';
+
+export default function LanguageSwitcher() {
+  const locale = useLocale();
   const router = useRouter();
-  const { pathname, asPath, query } = router;
+  const pathname = usePathname();
+
+  const switchLocale = (newLocale: string) => {
+    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    router.push(newPath);
+  };
 
   return (
-    <div className="flex items-center space-x-2">
-      <Link
-        href={{ pathname, query }}
-        as={asPath}
-        locale="en"
-        className={`px-3 py-1 rounded ${
-          router.locale === 'en' ? 'bg-blue-500 text-white' : 'bg-gray-200'
-        }`}
+    <div className="flex gap-2">
+      <Button
+        variant={locale === 'en' ? 'default' : 'outline'}
+        size="sm"
+        onClick={() => switchLocale('en')}
       >
         EN
-      </Link>
-      <Link
-        href={{ pathname, query }}
-        as={asPath}
-        locale="ar"
-        className={`px-3 py-1 rounded ${
-          router.locale === 'ar' ? 'bg-blue-500 text-white' : 'bg-gray-200'
-        }`}
+      </Button>
+      <Button
+        variant={locale === 'ar' ? 'default' : 'outline'}
+        size="sm"
+        onClick={() => switchLocale('ar')}
       >
-        عربي
-      </Link>
+        AR
+      </Button>
     </div>
   );
-};
-
-export default LanguageSwitcher; 
+} 

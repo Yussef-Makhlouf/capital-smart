@@ -4,11 +4,14 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useTranslations } from 'next-intl'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMachinesOpen, setIsMachinesOpen] = useState(false)
   const [isDoorsOpen, setIsDoorsOpen] = useState(false)
+  const t = useTranslations('nav')
 
   // Close all dropdowns when menu is closed
   const handleMenuClose = () => {
@@ -46,38 +49,29 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-3 xl:gap-4 2xl:gap-6">
               <Link href="/" className="font-semibold text-[#003B95] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95]/90 whitespace-nowrap">
-                الصفحة الرئيسية
+                {t('home')}
               </Link>
               <Link href="/about" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
-                من نحن
+                {t('about')}
               </Link>
               <Link href="/why-us" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
-                لماذا نحن؟
+                {t('whyUs')}
               </Link>
               <Link href="/services" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
-                الخدمات
+                {t('services')}
               </Link>
               <Link href="/library" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
-                المكتبة والمقالات
+                {t('library')}
               </Link>
               <Link href="/financial" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
-                حجز استشارة
+                {t('financial')}
               </Link>
               <Link href="/hiring" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
-                الوظائف والتدريب
+                {t('hiring')}
               </Link>
               <Link href="/contact" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
-                اتصل بنا
+                {t('contact')}
               </Link>
-              <Button 
-                className="bg-[#003B95] hover:bg-[#003B95]/90 rounded-[20px] sm:rounded-[24px] h-[32px] sm:h-[36px] md:h-[38px] px-3 sm:px-4 md:px-6 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap transition-all duration-200"
-                onClick={() => {
-                  // TODO: Implement language switching logic
-                  console.log('Switch to English')
-                }}
-              >
-                <span className="font-semibold text-[11px] sm:text-[12px] md:text-[13px] text-white">English</span>
-              </Button>
             </nav>
 
             {/* Contact Button - Hidden on Mobile */}
@@ -89,8 +83,8 @@ export default function Header() {
                 <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6">
                   <div className="flex justify-between items-center mb-6 sm:mb-8">
                     <div className="flex items-center gap-1.5 sm:gap-2">
-                      <Image src="/logo.png" alt="Logo" width={40} height={40} className="h-8 sm:h-10 w-auto" />
-                      <span className="font-bold text-xs sm:text-sm">شركة إعمار المتحدة للمصاعد</span>
+                      <Image src="/profiles.png" alt="Logo" width={40} height={40} className="h-8 sm:h-10 w-auto rounded-full" />
+                      <span className="font-bold text-xs sm:text-sm"> Capital Smart  </span>
                     </div>
                     <button
                       onClick={handleMenuClose}
@@ -104,39 +98,37 @@ export default function Header() {
                   </div>
                   <nav className="flex flex-col gap-3 sm:gap-4">
                     <Link href="/" className="font-semibold text-[#003B95] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
-                      الصفحة الرئيسية
+                      {t('home')}
                     </Link>
                     <Link href="/about" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
-                      من نحن
+                      {t('about')}
                     </Link>
                     <Link href="/why-us" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
-                      لماذا نحن؟
+                      {t('whyUs')}
                     </Link>
                     <Link href="/services" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
-                      الخدمات
+                      {t('services')}
                     </Link>
                     <Link href="/library" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
-                      المكتبة والمقالات
+                      {t('library')}
                     </Link>
                     <Link href="/financial" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
-                      حجز استشارة
+                      {t('financial')}
                     </Link>
                     <Link href="/hiring" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
-                      الوظائف والتدريب
+                      {t('hiring')}
                     </Link>
-                    <Button 
-                      className="bg-[#003B95] hover:bg-[#003B95]/90 rounded-[20px] sm:rounded-[24px] h-[32px] sm:h-[36px] md:h-[38px] px-3 sm:px-4 md:px-6 flex items-center gap-1.5 sm:gap-2 justify-center mt-3 sm:mt-4"
-                      onClick={() => {
-                        // TODO: Implement language switching logic
-                        console.log('Switch to English')
-                      }}
-                    >
-                      <span className="font-semibold text-[11px] sm:text-[12px] md:text-[13px] text-white">English</span>
-                    </Button>
+                    <div className="mt-3 sm:mt-4">
+                      <LanguageSwitcher />
+                    </div>
                   </nav>
                 </div>
               </div>
             )}
+
+            <div className="flex items-center gap-4">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </div>

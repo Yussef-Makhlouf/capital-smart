@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 
 type TabItem = {
   id: number;
@@ -22,6 +23,7 @@ type TabContent = {
 };
 
 export default function FinancialConsultationSection({ showButton = true }: { showButton?: boolean }) {
+  const t = useTranslations('financial')
   const [activeTab, setActiveTab] = useState("services")
 
   const containerVariants = {
@@ -46,52 +48,52 @@ export default function FinancialConsultationSection({ showButton = true }: { sh
   };
 
   const tabs: Tab[] = [
-    { id: "services", label: "خدمات الاستشارات المالية" },
-    { id: "steps", label: "خطوات العمل" },
-    { id: "benefits", label: "مميزات الاستشارة" },
-    { id: "tools", label: "أدوات التحليل" },
-    { id: "reports", label: "التقارير المالية" },
+    { id: "services", label: t('tabs.services') },
+    { id: "steps", label: t('tabs.steps') },
+    { id: "benefits", label: t('tabs.benefits') },
+    { id: "tools", label: t('tabs.tools') },
+    { id: "reports", label: t('tabs.reports') },
   ]
 
   const tabContent: TabContent = {
     services: [
-      { id: 1, title: "تحليل الوضع المالي الحالي", image: "/financial1.png", description: "تقييم شامل للوضع المالي الحالي للشركة أو الفرد، مع تحليل القوائم المالية والمؤشرات الرئيسية" },
-      { id: 2, title: "تخطيط الاستثمارات", image: "/financial2.png", description: "وضع استراتيجيات استثمارية متكاملة مع تحليل المخاطر والعوائد المتوقعة" },
-      { id: 3, title: "إدارة المخاطر المالية", image: "/financial3.png", description: "تحديد وتقييم وإدارة المخاطر المالية المختلفة مع وضع خطط للحد منها" },
-      { id: 4, title: "تحسين التدفق النقدي", image: "/financial4.png", description: "تحليل وتطوير استراتيجيات لتحسين التدفق النقدي وإدارة رأس المال العامل" },
-      { id: 5, title: "تخطيط التقاعد", image: "/financial5.png", description: "وضع خطط تقاعد شاملة مع مراعاة الأهداف المالية المستقبلية" },
-      { id: 6, title: "إدارة الديون", image: "/financial6.png", description: "تحليل هيكل الديون ووضع استراتيجيات لإدارتها وتخفيض تكلفتها" },
-      { id: 7, title: "تخطيط الضرائب", image: "/financial7.png", description: "وضع استراتيجيات ضريبية فعالة مع مراعاة القوانين واللوائح" },
-      { id: 8, title: "تقييم المشاريع", image: "/financial8.png", description: "تحليل وتقييم المشاريع الاستثمارية مع حساب معدلات العائد والمخاطر" },
+      { id: 1, title: t('content.services.0.title'), image: "/financial1.png", description: t('content.services.0.description') },
+      { id: 2, title: t('content.services.1.title'), image: "/financial2.png", description: t('content.services.1.description') },
+      { id: 3, title: t('content.services.2.title'), image: "/financial3.png", description: t('content.services.2.description') },
+      { id: 4, title: t('content.services.3.title'), image: "/financial4.png", description: t('content.services.3.description') },
+      { id: 5, title: t('content.services.4.title'), image: "/financial5.png", description: t('content.services.4.description') },
+      { id: 6, title: t('content.services.5.title'), image: "/financial6.png", description: t('content.services.5.description') },
+      { id: 7, title: t('content.services.6.title'), image: "/financial7.png", description: t('content.services.6.description') },
+      { id: 8, title: t('content.services.7.title'), image: "/financial8.png", description: t('content.services.7.description') },
     ],
     steps: [
-      { id: 1, title: "التقييم الأولي", image: "/step1.png", description: "تحليل الاحتياجات المالية وتحديد الأهداف والقيود" },
-      { id: 2, title: "تحليل البيانات", image: "/step2.png", description: "جمع وتحليل البيانات المالية والاقتصادية ذات الصلة" },
-      { id: 3, title: "تحديد الأهداف", image: "/step3.png", description: "وضع أهداف مالية واضحة وقابلة للقياس والتحقيق" },
-      { id: 4, title: "وضع الخطة", image: "/step4.png", description: "تطوير خطة مالية شاملة مع تحديد الإجراءات والموارد المطلوبة" },
-      { id: 5, title: "تنفيذ الاستراتيجية", image: "/step5.png", description: "تنفيذ الخطة المالية مع متابعة التقدم وإجراء التعديلات اللازمة" },
-      { id: 6, title: "المتابعة والتقييم", image: "/step6.png", description: "مراجعة وتقييم النتائج وإجراء التحسينات المستمرة" },
+      { id: 1, title: t('content.steps.0.title'), image: "/step1.png", description: t('content.steps.0.description') },
+      { id: 2, title: t('content.steps.1.title'), image: "/step2.png", description: t('content.steps.1.description') },
+      { id: 3, title: t('content.steps.2.title'), image: "/step3.png", description: t('content.steps.2.description') },
+      { id: 4, title: t('content.steps.3.title'), image: "/step4.png", description: t('content.steps.3.description') },
+      { id: 5, title: t('content.steps.4.title'), image: "/step5.png", description: t('content.steps.4.description') },
+      { id: 6, title: t('content.steps.5.title'), image: "/step6.png", description: t('content.steps.5.description') },
     ],
     benefits: [
-      { id: 1, title: "تحسين القرارات المالية", image: "/benefit1.png", description: "اتخاذ قرارات مالية مستنيرة بناءً على تحليل دقيق وشامل" },
-      { id: 2, title: "تقليل المخاطر", image: "/benefit2.png", description: "تحديد وإدارة المخاطر المالية بشكل فعال" },
-      { id: 3, title: "زيادة العوائد", image: "/benefit3.png", description: "تحسين العوائد المالية من خلال استراتيجيات استثمارية فعالة" },
-      { id: 4, title: "توفير الوقت والجهد", image: "/benefit4.png", description: "الاستفادة من خبرة المستشارين الماليين لتوفير الوقت والجهد" },
-      { id: 5, title: "تحقيق الأهداف المالية", image: "/benefit5.png", description: "وضع وتنفيذ خطط لتحقيق الأهداف المالية قصيرة وطويلة المدى" },
+      { id: 1, title: t('content.benefits.0.title'), image: "/benefit1.png", description: t('content.benefits.0.description') },
+      { id: 2, title: t('content.benefits.1.title'), image: "/benefit2.png", description: t('content.benefits.1.description') },
+      { id: 3, title: t('content.benefits.2.title'), image: "/benefit3.png", description: t('content.benefits.2.description') },
+      { id: 4, title: t('content.benefits.3.title'), image: "/benefit4.png", description: t('content.benefits.3.description') },
+      { id: 5, title: t('content.benefits.4.title'), image: "/benefit5.png", description: t('content.benefits.4.description') },
     ],
     tools: [
-      { id: 1, title: "تحليل النسب المالية", image: "/tool1.png", description: "استخدام النسب المالية لتحليل الأداء والوضع المالي" },
-      { id: 2, title: "نموذج التدفق النقدي", image: "/tool2.png", description: "تحليل وتوقع التدفقات النقدية المستقبلية" },
-      { id: 3, title: "تحليل السيناريوهات", image: "/tool3.png", description: "تقييم النتائج المالية تحت سيناريوهات مختلفة" },
-      { id: 4, title: "تقييم المخاطر", image: "/tool4.png", description: "تحليل وتقييم المخاطر المالية المختلفة" },
-      { id: 5, title: "تحليل العائد على الاستثمار", image: "/tool5.png", description: "تقييم جدوى المشاريع الاستثمارية" },
+      { id: 1, title: t('content.tools.0.title'), image: "/tool1.png", description: t('content.tools.0.description') },
+      { id: 2, title: t('content.tools.1.title'), image: "/tool2.png", description: t('content.tools.1.description') },
+      { id: 3, title: t('content.tools.2.title'), image: "/tool3.png", description: t('content.tools.2.description') },
+      { id: 4, title: t('content.tools.3.title'), image: "/tool4.png", description: t('content.tools.3.description') },
+      { id: 5, title: t('content.tools.4.title'), image: "/tool5.png", description: t('content.tools.4.description') },
     ],
     reports: [
-      { id: 1, title: "تقرير الأداء المالي", image: "/report1.png", description: "تحليل شامل للأداء المالي مع مقارنات معيارية" },
-      { id: 2, title: "تقرير التدفق النقدي", image: "/report2.png", description: "تحليل التدفقات النقدية وتوقعاتها المستقبلية" },
-      { id: 3, title: "تقرير المخاطر", image: "/report3.png", description: "تقييم المخاطر المالية واستراتيجيات إدارتها" },
-      { id: 4, title: "تقرير الاستثمارات", image: "/report4.png", description: "تحليل أداء المحفظة الاستثمارية وتوصيات التعديل" },
-      { id: 5, title: "تقرير التوصيات", image: "/report5.png", description: "توصيات مالية شاملة مع خطط تنفيذية" },
+      { id: 1, title: t('content.reports.0.title'), image: "/report1.png", description: t('content.reports.0.description') },
+      { id: 2, title: t('content.reports.1.title'), image: "/report2.png", description: t('content.reports.1.description') },
+      { id: 3, title: t('content.reports.2.title'), image: "/report3.png", description: t('content.reports.2.description') },
+      { id: 4, title: t('content.reports.3.title'), image: "/report4.png", description: t('content.reports.3.description') },
+      { id: 5, title: t('content.reports.4.title'), image: "/report5.png", description: t('content.reports.4.description') },
     ]
   }
 
@@ -101,16 +103,16 @@ export default function FinancialConsultationSection({ showButton = true }: { sh
         <div className="flex flex-col items-center gap-12 max-w-[967px] mx-auto">
           <div className="flex items-center gap-5">
             <div className="bg-[#EBF2F9] rounded-[40px] py-[10px] px-6">
-              <span className="text-primary font-bold text-base">استشارات مالية</span>
+              <span className="text-primary font-bold text-base">{t('badge')}</span>
             </div>
           </div>
 
           <h2 className="text-primary text-[32px] md:text-[42px] lg:text-[52px] font-extrabold leading-[1.2] text-center">
-            حلول مالية متكاملة لتحقيق أهدافك
+            {t('title')}
           </h2>
 
           <p className="text-[#475467] text-lg font-medium leading-8 text-center max-w-[800px]">
-            نقدم خدمات استشارية مالية متخصصة تساعدك في اتخاذ القرارات المالية الصحيحة وتحقيق أهدافك المالية المستقبلية.
+            {t('description')}
           </p>
 
           <div className="flex items-center gap-3 flex-wrap justify-center">
@@ -156,7 +158,7 @@ export default function FinancialConsultationSection({ showButton = true }: { sh
               </div>
               <div className="w-full pt-2 sm:pt-3 lg:pt-4 border-t border-gray-100">
                 <div className="flex flex-row-reverse items-center gap-2 sm:gap-3 justify-end">
-                  <h3 className="text-primary text-sm sm:text-base lg:text-lg font-bold leading-tight sm:leading-relaxed text-right line-clamp-2">
+                  <h3 className="text-primary text-sm sm:text-base lg:text-lg font-bold leading-tight sm:leading-relaxed  line-clamp-2">
                     {item.title}
                   </h3>
                   <svg 
@@ -170,7 +172,7 @@ export default function FinancialConsultationSection({ showButton = true }: { sh
                     <path d="M6 0L11.1962 9L0.803847 9L6 0Z" fill="#EC2127"/>
                   </svg>
                 </div>
-                <p className="text-[#475467] text-sm mt-2 text-right">
+                <p className="text-[#475467] text-sm mt-2 ">
                   {item.description}
                 </p>
               </div>
@@ -181,7 +183,7 @@ export default function FinancialConsultationSection({ showButton = true }: { sh
         {showButton && (
           <div className="flex justify-center mt-16">
             <Button className="bg-secondary hover:bg-secondary/90 rounded-[40px] h-[58px] px-8 text-white font-bold text-base gap-2">
-            احجز استشارتك الآن
+            {t('bookNow')}
             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -191,4 +193,4 @@ export default function FinancialConsultationSection({ showButton = true }: { sh
       </div>
     </section>
   )
-} 
+}

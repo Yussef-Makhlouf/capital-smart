@@ -1,17 +1,40 @@
 {
+  "Index": {
+    "title": "Capital Smart Financial & Business Consulting",
+    "subtitle": "Your trusted partner in financial and business consulting services"
+  },
   "nav": {
     "home": "Home",
     "about": "About",
     "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact",
+    "whyUs": "Why Us",
+    "library": "Library",
+    "financial": "Financial Consulting",
+    "hiring": "Careers"
   },
   "hero": {
-    "title": "Welcome to Our Elevator Services",
-    "subtitle": "Professional elevator installation and maintenance"
+    "welcome": "Welcome to",
+    "title": "Capital Smart",
+    "subtitle": "Financial & Business Consulting",
+    "description": "We provide comprehensive consulting solutions in finance and investment, with over 15 years of experience in providing specialized financial consulting for companies and individuals, focusing on maximizing investment returns with minimal risks...",
+    "bookConsultation": "Book Consultation",
+    "investment": "Investment",
+    "finance": "Finance",
+    "consulting": "Consulting",
+    "partnerInSuccess": "Your Partner in Financial Success"
   },
   "about": {
     "title": "About Us",
-    "description": "We are a leading provider of elevator services with years of experience in the industry."
+    "badge": "About the Institution",
+    "heading": "Who Are We?",
+    "description": "Capital Smart Financial and Business Consulting was established to be one of the best professional companies in Egypt and the Middle East, comprising a distinguished group of certified accountants and consultants specialized in various financial and administrative fields. At Capital Smart, we strive to provide the best consulting services through 'comprehensive solutions and multiple consulting solutions', and we continuously commit to transparency and dedication in building long-term business relationships to help you make the best business decisions with exceptional standards and in a timely manner.",
+    "stats": {
+      "experience": "Years of Experience in Financial Consulting",
+      "projects": "Completed Consulting Projects",
+      "reviews": "Positive Client Reviews",
+      "awards": "Awards and Certifications"
+    }
   },
   "services": {
     "title": "Our Services",
@@ -28,6 +51,186 @@
     "send": "Send Message"
   },
   "footer": {
-    "copyright": "© 2024 Elevator Services. All rights reserved."
+    "copyright": "© 2024 Capital Smart. All rights reserved."
+  },
+  "whyUs": {
+    "badge": "Why Us?",
+    "title": "Why Do Investors Collaborate with Us?",
+    "description": "We provide strategic advice for informed investment decisions. We prioritize business compliance with laws and standards to protect investments. We work with passion and integrity with meticulous attention to detail, providing customized client-focused services through dedicated financial experts who deeply understand your business.",
+    "companyName": "Capital Smart"
+  },
+  "projects": {
+    "badge": "Our Services",
+    "title": "Financial and Consulting Services Scope",
+    "description": "We provide a comprehensive range of financial and consulting services designed to help companies and individuals achieve their financial goals",
+    "showMore": "View More",
+    "showLess": "Show Less",
+    "services": {
+      "accounting": {
+        "title": "Accounting and Finance",
+        "description": "Account management, transaction recording, financial reporting, and payroll and social insurance management"
+      },
+      "supervision": {
+        "title": "Financial Supervision",
+        "description": "Budget planning, cash flow analysis, financial compliance monitoring, and internal controls evaluation"
+      },
+      "virtualCFO": {
+        "title": "Virtual CFO",
+        "description": "Providing comprehensive financial expertise and reports to develop financial, operational, and risk management strategies"
+      },
+      "dueDiligence": {
+        "title": "Due Diligence",
+        "description": "Comprehensive financial analysis, legal review, market and operations assessment, and risk management evaluation"
+      },
+      "zakatTax": {
+        "title": "Zakat and Tax Services",
+        "description": "Providing specialized consulting in Zakat compliance and optimal tax planning"
+      },
+      "management": {
+        "title": "Management Consulting",
+        "description": "Providing integrated consulting solutions to improve administrative performance and develop operations"
+      }
+    }
+  },
+  "financial": {
+    "badge": "Financial Consultation",
+    "title": "Comprehensive Financial Solutions to Achieve Your Goals",
+    "description": "We provide specialized financial consulting services to help you make the right financial decisions and achieve your future financial goals.",
+    "bookNow": "Book Your Consultation Now",
+    "tabs": {
+      "services": "Financial Consulting Services",
+      "steps": "Work Steps",
+      "benefits": "Consultation Benefits",
+      "tools": "Analysis Tools",
+      "reports": "Financial Reports"
+    },
+    "content": {
+      "services": [
+        {
+          "title": "Current Financial Analysis",
+          "description": "Comprehensive assessment of the current financial situation for companies or individuals, including analysis of financial statements and key indicators"
+        },
+        {
+          "title": "Investment Planning",
+          "description": "Developing integrated investment strategies with risk and expected return analysis"
+        },
+        {
+          "title": "Financial Risk Management",
+          "description": "Identifying, assessing, and managing various financial risks with mitigation plans"
+        },
+        {
+          "title": "Cash Flow Optimization",
+          "description": "Analyzing and developing strategies to improve cash flow and working capital management"
+        },
+        {
+          "title": "Retirement Planning",
+          "description": "Creating comprehensive retirement plans considering future financial goals"
+        },
+        {
+          "title": "Debt Management",
+          "description": "Analyzing debt structure and developing strategies for management and cost reduction"
+        },
+        {
+          "title": "Tax Planning",
+          "description": "Developing effective tax strategies while considering laws and regulations"
+        },
+        {
+          "title": "Project Evaluation",
+          "description": "Analyzing and evaluating investment projects with return rates and risk calculations"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Initial Assessment",
+          "description": "Analyzing financial needs and identifying goals and constraints"
+        },
+        {
+          "title": "Data Analysis",
+          "description": "Collecting and analyzing relevant financial and economic data"
+        },
+        {
+          "title": "Goal Setting",
+          "description": "Setting clear, measurable, and achievable financial goals"
+        },
+        {
+          "title": "Plan Development",
+          "description": "Developing a comprehensive financial plan with defined actions and required resources"
+        },
+        {
+          "title": "Strategy Implementation",
+          "description": "Implementing the financial plan with progress monitoring and necessary adjustments"
+        },
+        {
+          "title": "Monitoring and Evaluation",
+          "description": "Reviewing and evaluating results with continuous improvements"
+        }
+      ],
+      "benefits": [
+        {
+          "title": "Improved Financial Decisions",
+          "description": "Making informed financial decisions based on thorough and comprehensive analysis"
+        },
+        {
+          "title": "Risk Reduction",
+          "description": "Effectively identifying and managing financial risks"
+        },
+        {
+          "title": "Increased Returns",
+          "description": "Improving financial returns through effective investment strategies"
+        },
+        {
+          "title": "Time and Effort Savings",
+          "description": "Leveraging financial advisors' expertise to save time and effort"
+        },
+        {
+          "title": "Achieving Financial Goals",
+          "description": "Developing and implementing plans to achieve short and long-term financial goals"
+        }
+      ],
+      "tools": [
+        {
+          "title": "Financial Ratio Analysis",
+          "description": "Using financial ratios to analyze performance and financial position"
+        },
+        {
+          "title": "Cash Flow Model",
+          "description": "Analyzing and forecasting future cash flows"
+        },
+        {
+          "title": "Scenario Analysis",
+          "description": "Evaluating financial outcomes under different scenarios"
+        },
+        {
+          "title": "Risk Assessment",
+          "description": "Analyzing and evaluating various financial risks"
+        },
+        {
+          "title": "ROI Analysis",
+          "description": "Evaluating investment project feasibility"
+        }
+      ],
+      "reports": [
+        {
+          "title": "Financial Performance Report",
+          "description": "Comprehensive analysis of financial performance with benchmarking"
+        },
+        {
+          "title": "Cash Flow Report",
+          "description": "Analysis of cash flows and future projections"
+        },
+        {
+          "title": "Risk Report",
+          "description": "Assessment of financial risks and management strategies"
+        },
+        {
+          "title": "Investment Report",
+          "description": "Analysis of investment portfolio performance and adjustment recommendations"
+        },
+        {
+          "title": "Recommendations Report",
+          "description": "Comprehensive financial recommendations with implementation plans"
+        }
+      ]
+    }
   }
-} 
+}

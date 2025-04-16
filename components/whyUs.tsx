@@ -2,8 +2,11 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { useTranslation } from "@/lib/translations"
 
 export default function WhyUs() {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative py-24 bg-[#FAFAFA]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-[100px]">
@@ -12,17 +15,17 @@ export default function WhyUs() {
           <div className="flex flex-col justify-center items-start gap-8 lg:gap-12 w-full lg:w-[813px]">
             <div className="flex flex-row items-center gap-5">
               <div className="bg-[rgba(5,80,159,0.1)] rounded-[40px] px-5 py-[10px]">
-                <span className="text-[#05509F] text-[14px] font-bold">لماذا نحن؟</span>
+                <span className="text-[#05509F] text-[14px] font-bold">{t("whyUs.badge")}</span>
               </div>
             </div>
             
             <h2 className="text-[#05509F] text-3xl sm:text-4xl lg:text-[52px] font-extrabold leading-tight lg:leading-[53px]">
-              لماذا يتعاون المستثمرون معنا؟
+              {t("whyUs.title")}
             </h2>
             
             <div className="flex flex-col gap-8 lg:gap-12 text-justify text-base sm:text-lg lg:text-[18px] leading-relaxed lg:leading-[40px] text-black">
               <p>
-                نقدم نصائح استراتيجية لاتخاذ قرارات استثمارية مستنيرة. نولي أولوية لتوافق الأعمال مع القوانين والمعايير لحماية الاستثمارات. ونعمل بشغف ونزاهة مع اهتمام دقيق بالتفاصيل، حيث نقدم خدمات مخصصة تركز على العميل من خلال خبراء ماليين مكرسين يفهمون أعمالكم بعمق.
+                {t("whyUs.description")}
               </p>
             </div>
 
@@ -38,7 +41,7 @@ export default function WhyUs() {
                   <path d="M17.485 5.44409L8.90412 14.025L6.19336 11.3142" stroke="#EC2127" strokeWidth="1.5" strokeMiterlimit="10"/>
                 </svg>
               </div>
-              <span className="text-white text-xl sm:text-2xl font-bold">كابيتال سمارت</span>
+              <span className="text-white text-xl sm:text-2xl font-bold">{t("whyUs.companyName")}</span>
             </motion.div>
           </div>
 

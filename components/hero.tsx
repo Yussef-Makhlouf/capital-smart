@@ -4,14 +4,20 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { AlignCenter, ChevronDown } from "lucide-react";
 
+
+
+import { useTranslations } from "next-intl";
+
 export default function Hero() {
+  const t = useTranslations('hero');
+
   return (
     <section className="relative h-screen min-h-[808px] w-full overflow-hidden">
       {/* Background Image and Overlay */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-[#003B95]/90 to-[#003B95]/70 z-10" /> */}
       <Image
         src="/cover.png"
-        alt="استشارات مالية"
+        alt={t('title')}
         fill
         className="object-cover object-center"
         priority
@@ -24,7 +30,7 @@ export default function Hero() {
             {/* Welcome Badge */}
             <div className="flex items-center gap-5 backdrop-blur-[40px] p-[10px] rounded-[40px] bg-white/20 w-fit">
               <span className="text-white font-semibold text-lg whitespace-nowrap">
-                مرحباً بكم في
+                {t('welcome')}
               </span>
               <span className="text-lg">👋</span>
             </div>
@@ -32,23 +38,23 @@ export default function Hero() {
             {/* Main Headings */}
             <div className="flex flex-col gap-5 md:gap-6 w-full text-center">
               <h1 className="text-white text-3xl md:text-5xl lg:text-[66px] font-extrabold leading-tight md:leading-[67px] whitespace-pre-line">
-                كابيتال سمارت
+                {t('title')}
               </h1>
               <h2 className="text-white text-3xl md:text-5xl lg:text-[56px] font-extrabold leading-tight md:leading-[67px] max-w-[803px] mx-auto text-center">
-                للاستشارات المالية والأعمال
+                {t('subtitle')}
               </h2>
             </div>
 
             {/* Description */}
             <p className="text-white text-center text-base md:text-lg font-medium leading-relaxed md:leading-10 max-w-[711px] px-4">
-              نقدم حلولاً استشارية متكاملة في مجال التمويل والاستثمار، مع خبرة تزيد عن 15 عاماً في تقديم الاستشارات المالية المتخصصة للشركات والأفراد، مع التركيز على تحقيق أقصى عائد استثماري بأقل مخاطر ممكنة...
+              {t('description')}
             </p>
 
             {/* Bottom Section */}
             <div className="flex flex-col items-center justify-center gap-8 w-full">
               {/* Consultation Button */}
               <Button className="bg-white/20 backdrop-blur-[40px] rounded-[80px] h-[60px] w-[186px] text-white font-extrabold text-xs hover:bg-white/30 transition-colors flex items-center justify-center gap-2">
-                احجز استشارة
+                {t('bookConsultation')}
                 <span className="transform rotate-180">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -115,7 +121,7 @@ export default function Hero() {
                 {/* Tags */}
                 <div className="flex flex-col items-center gap-6 text-white">
                   <div className="flex items-center gap-4 flex-wrap justify-center">
-                    <span className="text-base font-medium">استثمار</span>
+                    <span className="text-base font-medium">{t('investment')}</span>
                     <svg
                       width="25"
                       height="2"
@@ -142,7 +148,7 @@ export default function Hero() {
                         </linearGradient>
                       </defs>
                     </svg>
-                    <span className="text-base font-medium">تمويل</span>
+                    <span className="text-base font-medium">{t('finance')}</span>
                     <svg
                       width="25"
                       height="2"
@@ -169,12 +175,12 @@ export default function Hero() {
                         </linearGradient>
                       </defs>
                     </svg>
-                    <span className="text-base font-medium">استشارات</span>
+                    <span className="text-base font-medium">{t('consulting')}</span>
                     <svg width="5" height="4" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="2.5" cy="2" r="2" fill="white"/>
                     </svg>
                     <span className="text-base font-medium whitespace-nowrap">
-                      شريكك في النجاح المالي
+                      {t('partnerInSuccess')}
                     </span>
                   </div>
                 </div>

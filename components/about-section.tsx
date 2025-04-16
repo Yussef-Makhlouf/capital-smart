@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
+import { useTranslations } from "next-intl"
 
 export default function AboutSection() {
+  const t = useTranslations('about')
   const [counts, setCounts] = useState({
     awards: 0,
     reviews: 0,
@@ -53,24 +55,24 @@ export default function AboutSection() {
   }, [inView])
 
   return (
-    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-[#FAFAFA]">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-[#FAFAFA]" dir="auto">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-[100px]">
-        <div className="flex flex-col items-end gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-[1695px] mx-auto">
+        <div className="flex flex-col items-start gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-[1695px] mx-auto">
           {/* Badge */}
-          <div className="w-full flex justify-start">
-            <div className="bg-white rounded-[15px] sm:rounded-[30px] md:rounded-[40px] py-[6px] sm:py-[8px] md:py-[10px] px-4 sm:px-5 md:px-6 flex items-center">
-              <span className="text-[#05509F] font-bold text-[10px] sm:text-xs md:text-sm">نبــذة عن المؤسســـة</span>
+          <div className="w-full flex justify-end" >
+            <div className="bg-white rounded-[15px] sm:rounded-[30px] md:rounded-[40px] py-[6px] sm:py-[8px] md:py-[10px] px-4 sm:px-5 md:px-6 flex items-center" >
+              <span className="text-[#05509F] font-bold text-[10px] sm:text-xs md:text-sm">{t('badge')}</span>
             </div>
           </div>
 
           {/* Title */}
-          <h2 className="text-[#05509F] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[52px] font-extrabold leading-tight lg:leading-[64px] text-right w-full">
-            من نحـــن ؟
+          <h2 className="text-[#05509F] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[52px] font-extrabold leading-tight lg:leading-[64px] w-full">
+            {t('heading')}
           </h2>
 
           {/* Description */}
-          <p className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-5 sm:leading-6 md:leading-7 lg:leading-8 text-right w-full">
-            تأسست شركة "كابيتال سمارت" للاستشارات المالية والأعمال لتكون واحدة من أفضل الشركات المهنية في مصر والشرق الأوسط، حيث تضم مجموعة متميزة من المحاسبين والمستشارين المعتمدين المتخصصين في مجالات مالية وإدارية متنوعة. نسعى في شركة كابيتال سمارت لتقديم أفضل خدمات الاستشارات من خلال "حلول شاملة وحلول استشارية متعددة"، ونلتزم باستمرار بالشفافية والتفاني في بناء علاقات عمل طويلة الأمد لمساعدتكم في اتخاذ أفضل القرارات التجارية بمعايير استثنائية وفي الوقت المناسب.
+          <p className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-5 sm:leading-6 md:leading-7 lg:leading-8 w-full">
+            {t('description')}
           </p>
         </div>
 
@@ -80,26 +82,26 @@ export default function AboutSection() {
             {
               image: "/abo1.png",
               count: counts.experience,
-              label: "سنوات من الخبرة في الاستشارات المالية",
+              label: t('stats.experience'),
               number: "4"
             },
             {
               image: "/abo2.png",
               count: counts.projects,
-              label: "مشروع استشاري مكتمل",
+              label: t('stats.projects'),
               number: "3"
             },
             {
               image: "/abo3.png",
               count: counts.reviews,
-              label: "تقييم إيجابي من عملائنا",
+              label: t('stats.reviews'),
               number: "2",
               isK: true
             },
             {
               image: "/abo4.png",
               count: counts.awards,
-              label: "جائزة وشهادة اعتماد",
+              label: t('stats.awards'),
               number: "1"
             }
           ].map((item, index) => (
@@ -107,11 +109,11 @@ export default function AboutSection() {
               <div className="absolute left-3 sm:left-6 md:left-10 -top-[15px] sm:-top-[25px] md:-top-[29px] w-[30px] sm:w-[40px] md:w-[58px] h-[30px] sm:h-[40px] md:h-[58px] bg-[#05509F] rounded-[10px] sm:rounded-[15px] md:rounded-[19px] flex items-center justify-center" dir="ltr">
                 <img src={item.image} alt={`Number ${item.number}`} className="w-10 sm:w-16 md:w-24 h-5 sm:h-8 md:h-12" />
               </div>
-              <div className="absolute bottom-3 sm:bottom-6 md:bottom-[40px] right-3 sm:right-6 md:right-[40px] flex flex-col items-start gap-0.5 sm:gap-1 md:gap-2">
-                <h3 className="text-[#05509F] text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-[52px] font-extrabold text-end">
+              <div className="absolute bottom-3 sm:bottom-6 md:bottom-[40px] inset-x-3 sm:inset-x-6 md:inset-x-[40px] flex flex-col gap-0.5 sm:gap-1 md:gap-2">
+                <h3 className="text-[#05509F] text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-[52px] font-extrabold">
                   {item.isK ? `${Math.floor(item.count / 1000)}k` : item.count} +
                 </h3>
-                <p className="text-black text-[10px] sm:text-xs md:text-sm lg:text-base text-right">{item.label}</p>
+                <p className="text-black text-[10px] sm:text-xs md:text-sm lg:text-base">{item.label}</p>
               </div>
             </div>
           ))}
