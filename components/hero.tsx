@@ -14,9 +14,9 @@ export default function Hero() {
   return (
     <section className="relative h-screen min-h-[808px] w-full overflow-hidden">
       {/* Background Image and Overlay */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-[#003B95]/90 to-[#003B95]/70 z-10" /> */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#003B95]/90 to-[#003B95]/70 z-10" />
       <Image
-        src="/cover.png"
+        src="/finance6.jpg"
         alt={t('title')}
         fill
         className="object-cover object-center"
@@ -65,9 +65,9 @@ export default function Hero() {
               {/* Stats and Info */}
               <div className="flex flex-col items-center gap-8">
                 {/* Stats */}
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 px-2">
-                    <span className="text-white font-medium">4.9</span>
+                <div className="flex items-center gap-4 rtl:flex-row-reverse">
+                  <div className="flex items-center gap-2 px-2 rtl:pl-0 rtl:pr-2">
+                    <span className="text-white font-medium rtl:text-right">4.9</span>
                     <svg
                       width="13"
                       height="12"
@@ -81,12 +81,12 @@ export default function Hero() {
                       />
                     </svg>
                   </div>
-                  <div className="flex -space-x-6 rtl:space-x-reverse">
+                  <div className="flex -space-x-6 rtl:space-x-reverse rtl:space-x-6">
                     <div
                       className="w-[50px] h-[50px] rounded-full bg-[#EDEDED] flex items-center justify-center transform hover:scale-110 transition-transform"
                       style={{
                         zIndex: 0,
-                        marginLeft: "-15px",
+                        marginInlineStart: "-15px",
                         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                       }}
                     >
@@ -101,7 +101,7 @@ export default function Hero() {
                           className="w-[50px] h-[50px] rounded-full border-3 border-white overflow-hidden transform transition-transform hover:scale-110"
                           style={{
                             zIndex: 40 - i * 10,
-                            marginLeft: i > 0 ? "-15px" : "0",
+                            marginInlineStart: i > 0 ? "-15px" : "0",
                             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                           }}
                         >

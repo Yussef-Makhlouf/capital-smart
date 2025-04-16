@@ -37,11 +37,11 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-1.5 sm:p-2"
+              className="lg:hidden p-2 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              <svg width="20" height="20" className="sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="24" height="24" className="sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="currentColor" />
               </svg>
             </button>
@@ -72,6 +72,9 @@ export default function Header() {
               <Link href="/contact" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
                 {t('contact')}
               </Link>
+              <div className="mt-4">
+                      <LanguageSwitcher />
+                    </div>
             </nav>
 
             {/* Contact Button - Hidden on Mobile */}
@@ -80,45 +83,45 @@ export default function Header() {
             {/* Mobile Navigation Menu */}
             {isMenuOpen && (
               <div className="fixed inset-0 bg-white z-50 lg:hidden overflow-y-auto">
-                <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-6">
-                  <div className="flex justify-between items-center mb-6 sm:mb-8">
-                    <div className="flex items-center gap-1.5 sm:gap-2">
-                      <Image src="/profiles.png" alt="Logo" width={40} height={40} className="h-8 sm:h-10 w-auto rounded-full" />
-                      <span className="font-bold text-xs sm:text-sm"> Capital Smart  </span>
+                <div className="container mx-auto px-4 py-6">
+                  <div className="flex justify-between items-center mb-8">
+                    <div className="flex items-center gap-2">
+                      <Image src="/profiles.png" alt="Logo" width={40} height={40} className="h-10 w-auto rounded-full" />
+                      <span className="font-bold text-sm">Capital Smart</span>
                     </div>
                     <button
                       onClick={handleMenuClose}
-                      className="p-1.5 sm:p-2"
+                      className="p-2 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       aria-label="Close menu"
                     >
-                      <svg width="20" height="20" className="sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg width="24" height="24" className="sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor" />
                       </svg>
                     </button>
                   </div>
-                  <nav className="flex flex-col gap-3 sm:gap-4">
-                    <Link href="/" className="font-semibold text-[#003B95] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
+                  <nav className="flex flex-col gap-4">
+                    <Link href="/" className="font-semibold text-[#003B95] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('home')}
                     </Link>
-                    <Link href="/about" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
+                    <Link href="/about" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('about')}
                     </Link>
-                    <Link href="/why-us" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
+                    <Link href="/why-us" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('whyUs')}
                     </Link>
-                    <Link href="/services" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
+                    <Link href="/services" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('services')}
                     </Link>
-                    <Link href="/library" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
+                    <Link href="/library" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('library')}
                     </Link>
-                    <Link href="/financial" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
+                    <Link href="/financial" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('financial')}
                     </Link>
-                    <Link href="/hiring" className="font-medium text-[#1A1A1A] text-[13px] sm:text-[14px] md:text-[15px] py-1.5 sm:py-2" onClick={handleMenuClose}>
+                    <Link href="/hiring" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('hiring')}
                     </Link>
-                    <div className="mt-3 sm:mt-4">
+                    <div className="mt-4">
                       <LanguageSwitcher />
                     </div>
                   </nav>
@@ -126,9 +129,9 @@ export default function Header() {
               </div>
             )}
 
-            <div className="flex items-center gap-4">
+            {/* <div className="flex items-center gap-4">
               <LanguageSwitcher />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
