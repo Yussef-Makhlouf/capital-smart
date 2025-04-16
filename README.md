@@ -1,4 +1,4 @@
-# Elevator Website
+# capital-smart Website
 
 A modern, responsive website built with Next.js, TypeScript, and Tailwind CSS.
 
