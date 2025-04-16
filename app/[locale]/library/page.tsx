@@ -274,7 +274,7 @@ export default function FinancialServicesPage() {
 
       <TestimonialsSection />
       <FaqSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <ContactSection />
 
     </div>

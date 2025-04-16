@@ -183,7 +183,7 @@ export default function HiringPage() {
 
       <TestimonialsSection />
       <FaqSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <ContactSection />
 
     </div>

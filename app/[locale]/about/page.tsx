@@ -202,7 +202,7 @@ export default function AboutSection() {
 
       <TestimonialsSection />
       <FaqSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <ContactSection />
     </div>
   );

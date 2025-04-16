@@ -73,7 +73,7 @@ export default function FinancialPage() {
       {/* Additional Sections */}
       <TestimonialsSection />
       <FaqSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <ContactSection />
   
     </div>
