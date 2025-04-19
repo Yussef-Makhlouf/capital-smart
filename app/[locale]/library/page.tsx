@@ -130,7 +130,7 @@ export default function FinancialServicesPage() {
     : services.filter(service => service.category === activeCategory);
 
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <div className="w-full h-full pb-16">
         <Header />
       </div>

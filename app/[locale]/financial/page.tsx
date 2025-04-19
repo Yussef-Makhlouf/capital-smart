@@ -42,7 +42,7 @@ export default function FinancialPage() {
       </div>
       
       {/* Hero Banner */}
-      <section className="relative w-full h-[262px] flex items-center justify-center overflow-hidden ">
+      <section className="relative w-full h-[262px] py-16 flex items-center justify-center overflow-hidden ">
         <div className="absolute inset-0 z-10" />
         <Image
           src="/article2.jpg"
