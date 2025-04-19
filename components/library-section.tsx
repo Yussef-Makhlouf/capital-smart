@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
 import Link from "next/link"
+import { useLocale } from 'next-intl'
 
 type Article = {
   id: number
@@ -169,12 +170,12 @@ export default function LibrarySection({ showButton = true }: { showButton?: boo
                   className="w-full bg-[#05509F] text-white hover:bg-[#05509F]/90"
                   asChild
                 >
-                  <a href={article.link}>
+                  <Link href={`/${useLocale()}/articles/${article.link.split('/').pop()}`}>
                     {t('readMore')}
                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
                       <path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </motion.div>
@@ -199,4 +200,4 @@ export default function LibrarySection({ showButton = true }: { showButton?: boo
       <div className="absolute left-[-60px] sm:left-[-90px] md:left-[-114px] top-[-40px] sm:top-[-50px] md:top-[-66px] w-[200px] sm:w-[250px] md:w-[328px] h-[200px] sm:h-[250px] md:h-[328px] bg-[#05509F] opacity-5 blur-[30px] sm:blur-[40px] md:blur-[50px] rounded-full"></div>
     </section>
   )
-} 
+}

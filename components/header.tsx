@@ -72,9 +72,9 @@ export default function Header() {
               <Link href="/contact" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
                 {t('contact')}
               </Link>
-              <div className="mt-4">
-                      <LanguageSwitcher />
-                    </div>
+              <div className="flex items-center whitespace-nowrap">
+                <LanguageSwitcher />
+              </div>
             </nav>
 
             {/* Contact Button - Hidden on Mobile */}

@@ -107,7 +107,7 @@ export default function ProjectsSection({ showButton = true }: { showButton?: bo
               className="bg-[#E41937] hover:bg-[#E41937]/90 rounded-[40px] h-[70px] px-12 text-white font-bold text-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             >
                {t('showMore')}
-              <img src="/vector.png" alt="arrow-right" className="w-3 h-3" />
+               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </Button></Link>
           </div>
         )}

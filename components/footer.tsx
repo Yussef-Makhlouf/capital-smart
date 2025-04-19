@@ -18,7 +18,7 @@ export default function Footer() {
                 {t('description')}
               </p>
               <a href="/catalog.pdf" download className="bg-[#E41937] text-white px-4 md:px-6 py-2 md:py-3 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#E41937]/90 transition-colors">
-                <img src="/vector.png" alt="arrow" className="w-3 h-3" />
+              <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 {t('companyProfile')}
               </a>
             </div>
@@ -69,16 +69,16 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start mt-12 md:mt-16">
           <h3 className="text-[#05509F] text-xl md:text-2xl font-bold mb-4 md:mb-6">{t('followUs')}</h3>
           <div className="flex gap-3">
-            <Link href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
+            <Link href="https://www.facebook.com/profile.php?id=61575252262841" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
               <img src="/facebook.png" alt="Facebook" className="w-10 h-8 md:w-12 md:h-10" />
             </Link>
-            <Link href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
+            <Link href="https://www.tiktok.com/@3capital_financ_advisory?lang=en" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
               <img src="/tiktok.png" alt="TikTok" className="w-10 h-8 md:w-12 md:h-10" />
             </Link>
-            <Link href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
+            <Link href="https://www.instagram.com/3capital_financial_advisors?fbclid=IwY2xjawJjdXpleHRuA2FlbQIxMAABHjlJZGO0txXZ1Y5zSyNIMX64arj0f9Am9XOgRu9jf3LeBUooVwLlW8VR-iWZ_aem_oqPYCZSRzFehh_4R4Z64Kg" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
               <img src="/instagram.png" alt="Instagram" className="w-10 h-8 md:w-12 md:h-10" />
             </Link>
-            <Link href="#" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
+            <Link href="https://x.com/3capital_advis" className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
               <img src="/xplat.png" alt="X" className="w-10 h-8 md:w-12 md:h-10" />
             </Link>
           </div>

@@ -130,8 +130,7 @@ export default function TestimonialsSection() {
             className="bg-[#E31E24] hover:bg-[#E31E24]/90 rounded-[40px] h-[60px] lg:h-[70px] px-8 text-white font-bold text-base transition-colors group"
           >
             {t('ctaButton')}
-            <img src="/vector.png" alt="arrow-right" className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
+            <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>          </Button>
         </Link>
       </motion.div>
     </section>

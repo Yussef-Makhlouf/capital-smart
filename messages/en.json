@@ -1,0 +1,46 @@
+{
+  "articles": {
+    "article1": {
+      "title": "First Article Title",
+      "fullContent": "Full content of the first article...",
+      "image": "/cover1.jpg",
+      "date": "2024-01-15",
+      "category": "Investment"
+    },
+    "article2": {
+      "title": "Second Article Title",
+      "fullContent": "Full content of the second article...",
+      "image": "/cover2.jpg",
+      "date": "2024-01-14",
+      "category": "Technology"
+    },
+    "article3": {
+      "title": "Third Article Title",
+      "fullContent": "Full content of the third article...",
+      "image": "/cover3.jpg",
+      "date": "2024-01-13",
+      "category": "management"
+    },
+    "article4": {
+      "title": "Fourth Article Title",
+      "fullContent": "Full content of the fourth article...",
+      "image": "/cover4.jpg",
+      "date": "2024-01-12",
+      "category": "planning"
+    },
+    "article5": {
+      "title": "Fifth Article Title",
+      "fullContent": "Full content of the fifth article...",
+      "image": "/cover5.jpg",
+      "date": "2024-01-11",
+      "category": "digital"
+    },
+    "article6": {
+      "title": "Sixth Article Title",
+      "fullContent": "Full content of the sixth article...",
+      "image": "/cover6.jpg",
+      "date": "2024-01-10",
+      "category": "merger"
+    }
+  }
+}
