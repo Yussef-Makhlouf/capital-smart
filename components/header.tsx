@@ -31,7 +31,9 @@ export default function Header() {
           <div className="flex justify-between items-center relative">
             {/* Logo and Company Name */}
             <div className="flex items-center gap-1.5 sm:gap-2 max-w-[180px] sm:max-w-[200px] md:max-w-none">
-              <Image src="/logo2.png" alt="Logo" width={48} height={48} className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto rounded-full" />
+              <Link href="/">
+                <Image src="/logo2.png" alt="Logo" width={40} height={40} className="h-10 w-auto rounded-full" />
+              </Link>
               <span className="font-bold text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg truncate"> 3Capital  </span>
             </div>
 

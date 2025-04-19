@@ -45,8 +45,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             <span className="text-[#05509F]">{t(`${articleId}.category`)}</span>
           </div>
           
-          <div className="text-[#475467] leading-relaxed space-y-6 prose-headings:text-[#05509F] prose-headings:font-bold prose-p:mb-4">
-            <ReactMarkdown>
+          <div className="text-[#475467] leading-relaxed space-y-6  prose-headings:text-[#05509F] prose-headings:font-bold prose-p:mb-4">
+            <ReactMarkdown >
               {t(`${articleId}.fullContent`)}
             </ReactMarkdown>
           </div>
