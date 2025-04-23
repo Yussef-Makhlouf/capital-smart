@@ -56,9 +56,9 @@ export default function Header() {
               <Link href="/about" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
                 {t('about')}
               </Link>
-              <Link href="/why-us" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
+              {/* <Link href="/why-us" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
                 {t('whyUs')}
-              </Link>
+              </Link> */}
               <Link href="/services" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
                 {t('services')}
               </Link>
@@ -108,9 +108,9 @@ export default function Header() {
                     <Link href="/about" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('about')}
                     </Link>
-                    <Link href="/why-us" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
+                    {/* <Link href="/why-us" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('whyUs')}
-                    </Link>
+                    </Link> */}
                     <Link href="/services" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('services')}
                     </Link>

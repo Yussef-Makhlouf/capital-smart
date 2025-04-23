@@ -13,11 +13,12 @@ import ContactSection from "@/components/contact-section";
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 
+
 export default function HiringPage() {
   const t = useTranslations('hiring');
   const locale = useLocale();
   const isRTL = locale === 'ar';
-  
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -75,7 +76,6 @@ export default function HiringPage() {
           <h1 className="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.2] text-center">{t('pageTitle')}</h1>
         </div>
       </section>
-
       {/* Career and Training Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-[100px]">
@@ -120,11 +120,38 @@ export default function HiringPage() {
                 {t('training.description')}
                 <a href="mailto:careers@CapitalSmartFBP.com" className="text-primary font-bold hover:underline"> careers@CapitalSmartFBP.com</a>
               </p>
+              {/* Certificates Section */}
+             {/* Certificates Section */}
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+  {/* Certificate 1 */}
+  <div className="bg-white rounded-xl shadow p-5 border border-gray-100 flex flex-col gap-2">
+    <span className="font-bold text-primary">{t('certificates.cma.title')}</span>
+    <span className="text-gray-700">{t('certificates.cma.subtitle')}</span>
+    <span className="text-sm text-gray-500">{t('certificates.cma.issuer')}</span>
+  </div>
+  {/* Certificate 2 */}
+  <div className="bg-white rounded-xl shadow p-5 border border-gray-100 flex flex-col gap-2">
+    <span className="font-bold text-primary">{t('certificates.ifrs.title')}</span>
+    <span className="text-gray-700">{t('certificates.ifrs.subtitle')}</span>
+    <span className="text-sm text-gray-500">{t('certificates.ifrs.issuer')}</span>
+  </div>
+  {/* Certificate 3 */}
+  <div className="bg-white rounded-xl shadow p-5 border border-gray-100 flex flex-col gap-2">
+    <span className="font-bold text-primary">{t('certificates.fmva.title')}</span>
+    <span className="text-gray-700">{t('certificates.fmva.subtitle')}</span>
+    <span className="text-sm text-gray-500">{t('certificates.fmva.issuer')}</span>
+  </div>
+  {/* Certificate 4 */}
+  <div className="bg-white rounded-xl shadow p-5 border border-gray-100 flex flex-col gap-2">
+    <span className="font-bold text-primary">{t('certificates.fmaa.title')}</span>
+    <span className="text-gray-700">{t('certificates.fmaa.subtitle')}</span>
+    <span className="text-sm text-gray-500">{t('certificates.fmaa.issuer')}</span>
+  </div>
+</div>
             </motion.div>
           </motion.div>
         </div>
       </section>
-
       {/* Team Section */}
       <section className="py-16 bg-gradient-to-b from-[#FAFAFA] to-white">
         <div className="container mx-auto px-4 lg:px-[100px]">

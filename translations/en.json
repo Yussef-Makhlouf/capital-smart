@@ -11,7 +11,7 @@
     "whyUs": "Why Us",
     "library": "Library",
     "financial": "Financial Consulting",
-    "hiring": "Careers"
+    "hiring": "Courses"
   },
   "hero": {
     "welcome": "Welcome to",
@@ -68,13 +68,19 @@
     "contactUs": "Contact Us",
     "followUs": "Follow Us",
     "developedBy": "Developed with excellence by",
-    "copyright": "All rights reserved to  3Capital  financial consultants"    
+    "copyright": "All rights reserved to  3Capital  financial consultants"    ,
+    "email": "info@3Capital_Financial .com",
+    "phone": "20-1029700534+",
+    "location": "10 Men Ramadan - Cairo"
   },
   "whyUs": {
     "badge": "Why Us?",
     "title": "Why Do Investors Collaborate with Us?",
     "description": "We provide strategic advice for informed investment decisions. We prioritize business compliance with laws and standards to protect investments. We work with passion and integrity with meticulous attention to detail, providing customized client-focused services through dedicated financial experts who deeply understand your business.",
-    "companyName": "3Capital "
+    "companyName": "Call Us ",
+    "location": "10 Men Ramadan - Cairo",
+    "email": "info@3Capital_Financial .com",
+    "phone": "20-1029700534+"
   },
   "projects": {
     "badge": "Our Services",
@@ -468,14 +474,37 @@
     },
     "training": {
       "title": "Training",
-      "description": "We work with you to understand your goals and develop customized training tools and courses to enhance your skills. If you would like to book a training course at 3Capital , please send your request to"
+      "description": "We collaborate with you to understand your goals and develop tailored tools and training courses to enhance your skills. If you would like to book a training course at 3Capital , please send your request to"
     },
+    "certificates": {
+      "cma": {
+          "title": "CMA-US",
+          "subtitle": "Certified Management Accountant",
+          "issuer": "Institute of Management Accountants (USA)"
+        },
+        "ifrs": {
+          "title": "Diploma-IFRS",
+          "subtitle": "Diploma in International Financial Reporting Standards",
+          "issuer": "Association of Chartered Certified Accountants"
+        },
+        "fmva": {
+          "title": "FMVA",
+          "subtitle": "Financial Modelling & Valuation Analyst",
+          "issuer": "Corporate Finance Institute (CFI)"
+        },
+        "fmaa": {
+          "title": "FMAA",
+          "subtitle": "Financial and Managerial Accounting Associate",
+          "issuer": "Institute of Management Accountants (USA)"
+        }
+      }
+    ,
     "team": {
       "title": "Our Team",
       "description": "The excellence of our company is a direct reflection of the exceptional talent within our team. Our office includes a select group of qualified professionals with diverse experiences in accounting, finance, and management."
     },
     "teamMember": {
-      "name": "Sameh Said Abdel Fattah, CMA",
+      "name": "Sameh Said , CMA",
       "position": "Founder and CEO",
       "experienceTitle": "Professional and Academic Experience:",
       "experience": "More than 16 years of experience in business, corporate finance, and financial consulting."
@@ -544,9 +573,9 @@
     },
     "ceo": {
       "badge": "CEO Message",
-      "name": "Mr. Sameh Said Abdel Fattah",
+      "name": "Mr. Sameh Said ",
       "imageAlt": "CEO Image",
-      "paragraph1": "3Capital  has established a trusted reputation known for providing customized solutions for diverse business needs. Our services target both local and foreign businesses looking to invest in the Egyptian and Saudi markets, where we provide a mix of business expertise, extensive experience, local insights, networking capabilities, and strategic guidance to ensure our clients' success in their endeavors.",
+      "paragraph1": "Sameh Said, CEO of 3Capital Financial Consulting, has over 17 years of experience in financial, administrative, and strategic management, including serving as CFO in major holding companies. He possesses extensive expertise across various industrial, commercial, contracting, service, and investment sectors. He is a Certified Management Accountant (CMA) from the USA, a Certified Public Accountant (CPA) from Egypt, and holds certifications in digital transformation and Oracle implementation in large companies.",
       "paragraph2": "We work to accelerate business development in emerging markets, and reduce investment risks by leveraging promising opportunities that align with Vision 2030 initiatives.",
       "shortName": "Sameh Said",
       "position": "CEO"

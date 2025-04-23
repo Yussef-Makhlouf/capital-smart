@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
+import Link from "next/link"
 
 export default function WhyUs() {
   const t = useTranslations('whyUs');
@@ -49,7 +50,7 @@ export default function WhyUs() {
                   <path d="M17.485 5.44409L8.90412 14.025L6.19336 11.3142" stroke="#EC2127" strokeWidth="1.5" strokeMiterlimit="10"/>
                 </svg>
               </div>
-              <span className="text-white text-xl sm:text-2xl font-bold">{t('companyName')}</span>
+              <Link href='/financial' className="text-white text-xl sm:text-2xl font-bold">{t('companyName')}</Link>
             </motion.div>
           </div>
 

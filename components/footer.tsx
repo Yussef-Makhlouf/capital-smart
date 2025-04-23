@@ -57,9 +57,9 @@ export default function Footer() {
               <h3 className="text-[#05509F] text-xl md:text-2xl font-bold mb-3 md:mb-4">{t('contactUs')}</h3>
               <div className="w-12 h-0.5 bg-[#05509F] mb-6 md:mb-8"></div>
               <div className="flex flex-col items-center md:items-start gap-4 md:gap-5">
-                <span className="text-[#656565] text-sm md:text-base">info@3Capital_Financial .com</span>
-                <span className="text-[#656565] text-sm md:text-base">20 1029700534+</span>
-                <span className="text-[#656565] text-sm md:text-base">01029700534 02+</span>
+                <span className="text-[#656565] text-sm md:text-base">{t('email')}</span>
+                <span className="text-[#656565] text-sm md:text-base">{t('phone')}</span>
+                <span className="text-[#656565] text-sm md:text-base">{t('location')}</span>
               </div>
             </div>
           </div>

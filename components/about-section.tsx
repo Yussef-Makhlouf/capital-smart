@@ -25,10 +25,10 @@ export default function AboutSection() {
       const interval = duration / steps
 
       const targetCounts = {
-        awards: 50,
-        reviews: 500,
-        projects: 1000,
-        experience: 10
+        awards: 5,
+        reviews: 15,
+        projects: 23,
+        experience: 16
       }
 
       let currentStep = 0
@@ -96,7 +96,7 @@ export default function AboutSection() {
               count: counts.reviews,
               label: t('stats.reviews'),
               number: "2",
-              isK: true
+              isK: false
             },
             {
               image: "/abo4.png",
