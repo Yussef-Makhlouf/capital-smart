@@ -81,11 +81,20 @@ const ConsultationForm = () => {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        // Here you would typically send the data to your backend
-        console.log('Form submitted:', formData);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || 'حدث خطأ في إرسال النموذج');
+        }
+
         // Reset form after successful submission
         setFormData({
           firstName: '',

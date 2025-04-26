@@ -21,11 +21,12 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
   children,
-  params: { locale }
+  params
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   if (!locale || !['en', 'ar'].includes(locale)) {
     notFound();
   }
@@ -41,19 +42,14 @@ export default async function LocaleLayout({
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body className="font-[Lama Sans]">
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+   
             <div className="min-h-screen flex flex-col">
               <Header />
               {children}
    
               <Footer />
             </div>
-          </ThemeProvider>
+    
         </NextIntlClientProvider>
       </body>
     </html>
