@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '3Capital - استشارات مالية وأعمال | خبراء التمويل والاستثمار',
     description: 'شركة 3Capital للاستشارات المالية والأعمال - خبراء في التمويل والاستثمار والاستشارات المالية. نقدم حلولاً استشارية متكاملة مع خبرة تزيد عن 16 عاماً',
-    url: 'http://www.3capitaladvisory.com/',
+    url: 'http://3capital-advisory.com',
     siteName: '3Capital Financial Consultants',
     locale: 'ar_SA',
     type: 'website',
@@ -73,7 +73,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <head>
         <meta charSet="utf-8" />
-        <link rel="canonical" href="http://www.3capitaladvisory.com/" />
+        <link rel="canonical" href="http://3capital-advisory.com" />
       </head>
       <body>{children}</body>
     </html>
