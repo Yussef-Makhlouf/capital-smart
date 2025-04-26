@@ -449,6 +449,7 @@
         "required": "Please enter your email",
         "invalid": "Invalid email format. Example: example@domain.com"
       },
+      "companyName": "company name",
       "phone": {
         "required": "Please enter your phone number",
         "invalid": "Invalid phone number. Must be between 10 and 15 digits"

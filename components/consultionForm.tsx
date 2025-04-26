@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
@@ -9,6 +7,7 @@ import { useLocale } from 'next-intl';
 interface FormErrors {
   firstName?: string;
   lastName?: string;
+  companyName?: string; // New field for company name
   email?: string;
   phone?: string;
   message?: string;
@@ -18,10 +17,11 @@ const ConsultationForm = () => {
   const t = useTranslations('consultationForm');
   const locale = useLocale();
   const isRTL = locale === 'ar';
-  
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
+    companyName: '', // New state for company name
     email: '',
     phone: '',
     message: ''
@@ -47,6 +47,10 @@ const ConsultationForm = () => {
       newErrors.lastName = t('errors.lastName.required');
     } else if (formData.lastName.length < 2) {
       newErrors.lastName = t('errors.lastName.tooShort');
+    }
+
+    if (!formData.companyName.trim()) {
+      newErrors.companyName = t('errors.companyName.required'); // Validation for company name
     }
 
     if (!formData.email.trim()) {
@@ -77,7 +81,7 @@ const ConsultationForm = () => {
     e.preventDefault();
     setSubmitError(null);
     setSubmitSuccess(false);
-    
+
     if (validateForm()) {
       setIsSubmitting(true);
       try {
@@ -88,9 +92,7 @@ const ConsultationForm = () => {
           },
           body: JSON.stringify(formData),
         });
-
         const result = await response.json();
-
         if (!response.ok) {
           throw new Error(result.error || 'حدث خطأ في إرسال النموذج');
         }
@@ -99,13 +101,14 @@ const ConsultationForm = () => {
         setFormData({
           firstName: '',
           lastName: '',
+          companyName: '', // Clear company name field
           email: '',
           phone: '',
           message: ''
         });
         setErrors({});
         setSubmitSuccess(true);
-        
+
         // Scroll to top to show success message
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } catch (error) {
@@ -129,6 +132,7 @@ const ConsultationForm = () => {
       ...prev,
       [name]: value
     }));
+
     // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({
@@ -136,6 +140,7 @@ const ConsultationForm = () => {
         [name]: undefined
       }));
     }
+
     // Clear success message when user makes changes
     if (submitSuccess) {
       setSubmitSuccess(false);
@@ -151,43 +156,32 @@ const ConsultationForm = () => {
   }, [isRTL]);
 
   return (
-    <div id="consultation-form-container" dir={isRTL ? 'rtl' : 'ltr'} className="max-w-4xl mx-auto p-6 lg:p-10 bg-white rounded-2xl shadow-xl border border-gray-100">
+    <div id="consultation-form-container" dir={isRTL ? 'rtl' : 'ltr'} className="max-w-4xl mx-auto p-6 lg:p-10 bg-white rounded-3xl shadow-2xl border border-gray-100">
       <div className="text-center mb-10">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold text-[#05509F] mb-4"
+          className="text-4xl font-bold text-[#05509F] mb-4"
         >
           {t('title')}
         </motion.h2>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-gray-600 mb-8 max-w-2xl mx-auto"
+          className="text-gray-600 text-lg max-w-2xl mx-auto"
         >
           {t('subtitle')}
         </motion.p>
-        
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-blue-50 p-6 md:p-8 rounded-xl mb-8 border-l-4 border-[#05509F]"
-        >
-          <h3 className="text-xl font-semibold text-[#05509F] mb-3">{t('freeConsultation.title')}</h3>
-          <p className="text-gray-700">
-            {t('freeConsultation.description')}
-          </p>
-        </motion.div>
       </div>
 
+      {/* Success Message */}
       {submitSuccess && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8 p-5 bg-green-50 text-green-800 rounded-xl border border-green-200 flex items-center gap-3"
+          className="mb-8 p-6 bg-green-50 text-green-800 rounded-xl border border-green-200 flex items-center gap-3 shadow-md"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -196,11 +190,12 @@ const ConsultationForm = () => {
         </motion.div>
       )}
 
+      {/* Error Message */}
       {submitError && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8 p-5 bg-red-50 text-red-800 rounded-xl border border-red-200 flex items-center gap-3"
+          className="mb-8 p-6 bg-red-50 text-red-800 rounded-xl border border-red-200 flex items-center gap-3 shadow-md"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -210,7 +205,8 @@ const ConsultationForm = () => {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-8">
-        <motion.div 
+        {/* First Name and Last Name Fields */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -220,28 +216,20 @@ const ConsultationForm = () => {
             <label htmlFor="firstName" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
               {t('fields.firstName')}
             </label>
-            <div className="relative">
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
-                  ${errors.firstName 
-                    ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
-                    : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
-                  } ${isRTL ? 'text-right' : 'text-left'}`
-                }
-                required
-                placeholder={t('fields.firstName')}
-              />
-              {errors.firstName && (
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-                </div>
-              )}
-            </div>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              className={`w-full px-5 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors ${
+                errors.firstName
+                  ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500'
+                  : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+              }`}
+              required
+              placeholder={t('fields.firstName')}
+            />
             {errors.firstName && (
               <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
                 <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
@@ -249,33 +237,25 @@ const ConsultationForm = () => {
               </p>
             )}
           </div>
-          
+
           <div className={errors.lastName ? 'error-field' : ''}>
             <label htmlFor="lastName" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
               {t('fields.lastName')}
             </label>
-            <div className="relative">
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
-                  ${errors.lastName 
-                    ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
-                    : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
-                  } ${isRTL ? 'text-right' : 'text-left'}`
-                }
-                required
-                placeholder={t('fields.lastName')}
-              />
-              {errors.lastName && (
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-                </div>
-              )}
-            </div>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              className={`w-full px-5 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors ${
+                errors.lastName
+                  ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500'
+                  : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+              }`}
+              required
+              placeholder={t('fields.lastName')}
+            />
             {errors.lastName && (
               <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
                 <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
@@ -285,37 +265,62 @@ const ConsultationForm = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        {/* Company Name Field */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
+          className={errors.companyName ? 'error-field' : ''}
+        >
+          <label htmlFor="companyName" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
+            {t('fields.companyName')}
+          </label>
+          <input
+            type="text"
+            id="companyName"
+            name="companyName"
+            value={formData.companyName}
+            onChange={handleChange}
+            className={`w-full px-5 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors ${
+              errors.companyName
+                ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500'
+                : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+            }`}
+            required
+            placeholder={t('fields.companyName')}
+          />
+          {errors.companyName && (
+            <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
+              <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
+              <span>{errors.companyName}</span>
+            </p>
+          )}
+        </motion.div>
+
+        {/* Email Field */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           className={errors.email ? 'error-field' : ''}
         >
           <label htmlFor="email" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
             {t('fields.email')}
           </label>
-          <div className="relative">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
-                ${errors.email 
-                  ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
-                  : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
-                } ${isRTL ? 'text-right' : 'text-left'}`
-              }
-              required
-              placeholder={t('fields.email')}
-            />
-            {errors.email && (
-              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-              </div>
-            )}
-          </div>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className={`w-full px-5 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors ${
+              errors.email
+                ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500'
+                : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+            }`}
+            required
+            placeholder={t('fields.email')}
+          />
           {errors.email && (
             <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
               <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
@@ -324,37 +329,30 @@ const ConsultationForm = () => {
           )}
         </motion.div>
 
-        <motion.div 
+        {/* Phone Field */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
           className={errors.phone ? 'error-field' : ''}
         >
           <label htmlFor="phone" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
             {t('fields.phone')}
           </label>
-          <div className="relative">
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
-                ${errors.phone 
-                  ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
-                  : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
-                } ${isRTL ? 'text-right' : 'text-left'}`
-              }
-              required
-              placeholder={t('fields.phone')}
-            />
-            {errors.phone && (
-              <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-              </div>
-            )}
-          </div>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className={`w-full px-5 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors ${
+              errors.phone
+                ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500'
+                : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+            }`}
+            required
+            placeholder={t('fields.phone')}
+          />
           {errors.phone && (
             <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
               <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
@@ -363,37 +361,30 @@ const ConsultationForm = () => {
           )}
         </motion.div>
 
-        <motion.div 
+        {/* Message Field */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
           className={errors.message ? 'error-field' : ''}
         >
           <label htmlFor="message" className={`block text-gray-700 mb-2 font-medium ${isRTL ? 'text-right' : 'text-left'}`}>
             {t('fields.message')}
           </label>
-          <div className="relative">
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={5}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors
-                ${errors.message 
-                  ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500' 
-                  : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
-                } ${isRTL ? 'text-right' : 'text-left'}`
-              }
-              required
-              placeholder={t('fields.messagePlaceholder')}
-            />
-            {errors.message && (
-              <div className="absolute top-3 right-3 pointer-events-none">
-                <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-              </div>
-            )}
-          </div>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows={5}
+            className={`w-full px-5 py-3 border rounded-lg focus:ring-2 focus:outline-none transition-colors ${
+              errors.message
+                ? 'border-red-300 bg-red-50 focus:ring-red-200 focus:border-red-500'
+                : 'border-gray-300 focus:ring-blue-200 focus:border-[#05509F]'
+            }`}
+            required
+            placeholder={t('fields.messagePlaceholder')}
+          />
           {errors.message && (
             <p className={`text-red-500 text-sm mt-2 flex items-center gap-1 ${isRTL ? 'justify-end' : 'justify-start'}`}>
               <ExclamationCircleIcon className="h-4 w-4 flex-shrink-0" />
@@ -402,10 +393,11 @@ const ConsultationForm = () => {
           )}
         </motion.div>
 
+        {/* Submit Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.9 }}
           className="pt-4"
         >
           <motion.button
@@ -413,12 +405,11 @@ const ConsultationForm = () => {
             whileTap={{ scale: 0.98 }}
             type="submit"
             disabled={isSubmitting}
-            className={`w-full py-4 px-6 rounded-xl font-semibold text-white text-lg shadow-lg transition-all
-              ${isSubmitting
+            className={`w-full py-4 px-6 rounded-xl font-semibold text-white text-lg shadow-lg transition-all ${
+              isSubmitting
                 ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-[#05509F] hover:bg-[#034584] active:bg-[#023b70]'
-              } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`
-            }
+                : 'bg-gradient-to-r from-[#05509F] to-[#003366] hover:from-[#034584] hover:to-[#002b55] active:from-[#023b70] active:to-[#002244]'
+            } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
           >
             <span className="flex items-center justify-center gap-2">
               {isSubmitting && (
