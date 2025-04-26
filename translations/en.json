@@ -434,7 +434,8 @@
       "email": "Email",
       "phone": "Mobile Phone",
       "message": "Message",
-      "messagePlaceholder": "Tell us about your needs or questions..."
+      "messagePlaceholder": "Tell us about your needs or questions...",
+      "companyName": "company name"
     },
     "errors": {
       "firstName": {
@@ -449,7 +450,7 @@
         "required": "Please enter your email",
         "invalid": "Invalid email format. Example: example@domain.com"
       },
-      "companyName": "company name",
+      
       "phone": {
         "required": "Please enter your phone number",
         "invalid": "Invalid phone number. Must be between 10 and 15 digits"
