@@ -110,7 +110,7 @@ export const generateEmailTemplate = (data: {
         <div class="container">
           <!-- Header Section -->
           <div class="header">
-            <img src="https://www.3capitaladvisory.com/logo.png" alt="Company Logo" class="company-logo">
+            <img src="https://www.3capital-advisory.com/logo2.png alt="Company Logo" class="company-logo">
             <h1>رسالة جديدة من نموذج الاتصال</h1>
           </div>
   
