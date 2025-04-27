@@ -17,7 +17,7 @@ export default function Footer() {
               <p className="text-[#656565] text-sm md:text-base leading-[24px] md:leading-[32px]   mb-6 md:mb-8 max-w-[467px]" >
                 {t('description')}
               </p>
-              <a href="/catalog.pdf" download className="bg-[#E41937] text-white px-4 md:px-6 py-2 md:py-3 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#E41937]/90 transition-colors">
+              <a href="/profile.pdf" download className="bg-[#E41937] text-white px-4 md:px-6 py-2 md:py-3 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#E41937]/90 transition-colors">
               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 {t('companyProfile')}
               </a>
@@ -46,7 +46,7 @@ export default function Footer() {
               <div className="flex flex-col items-center md:items-start gap-4 md:gap-5">
                 <Link href="/hiring" className="text-[#656565] hover:text-[#05509F] transition-colors text-sm md:text-base">{t('jobsTraining')}</Link>
                 <Link href="/financial" className="text-[#656565] hover:text-[#05509F] transition-colors text-sm md:text-base">{t('bookConsultation')}</Link>
-                <a href="/catalog.pdf" download className="text-[#656565] hover:text-[#05509F] transition-colors text-sm md:text-base">{t('companyProfile')}</a>
+                <a href="/profile.pdf" download className="text-[#656565] hover:text-[#05509F] transition-colors text-sm md:text-base">{t('companyProfile')}</a>
               </div>
             </div>
           </div>

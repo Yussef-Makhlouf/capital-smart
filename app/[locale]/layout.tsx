@@ -40,7 +40,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      <body className="font-[Lama Sans]">
+      <body className="">
         <NextIntlClientProvider locale={locale} messages={messages}>
    
             <div className="min-h-screen flex flex-col">

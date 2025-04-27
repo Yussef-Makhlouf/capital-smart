@@ -71,6 +71,9 @@ export default function Header() {
               <Link href="/hiring" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
                 {t('hiring')}
               </Link>
+              <Link href="/certificates" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
+                {t('certificates')}
+              </Link>
               <Link href="/contact" className="font-medium text-[#1A1A1A] text-[13px] xl:text-[14px] 2xl:text-[15px] hover:text-[#003B95] whitespace-nowrap">
                 {t('contact')}
               </Link>
@@ -122,6 +125,13 @@ export default function Header() {
                     </Link>
                     <Link href="/hiring" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
                       {t('hiring')}
+                    </Link>
+                
+                    <Link href="/certificates" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
+                      {t('certificates')}
+                    </Link>
+                    <Link href="/contact" className="font-medium text-[#1A1A1A] text-[14px] py-2" onClick={handleMenuClose}>
+                      {t('contact')}
                     </Link>
                     <div className="mt-4">
                       <LanguageSwitcher />

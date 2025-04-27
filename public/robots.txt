@@ -3,4 +3,4 @@ Allow: /
 Allow: /library/
 Allow: /library/*
 
-Sitemap: http://3capital-advisory.comsitemap.xml
+Sitemap: http://3capital-advisory.com/sitemap.xml

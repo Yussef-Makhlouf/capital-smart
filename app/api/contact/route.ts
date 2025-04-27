@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
               <h2>شكراً لتواصلك معنا</h2>
               <p>عزيزي ${data.firstName} ${data.lastName},</p>
               <p>نؤكد استلام رسالتك وسنقوم بالرد عليك في أقرب وقت ممكن.</p>
-              <p>مع خالص التحية،<br>فريق Capital Smart</p>
+              <p>مع خالص التحية،<br>فريق 3Capital-advisory </p>
             </div>
           `
         });

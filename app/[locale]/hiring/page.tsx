@@ -147,6 +147,14 @@ export default function HiringPage() {
     <span className="text-gray-700">{t('certificates.fmaa.subtitle')}</span>
     <span className="text-sm text-gray-500">{t('certificates.fmaa.issuer')}</span>
   </div>
+  
+  <div className="col-span-1 sm:col-span-2 mt-4 flex justify-center">
+    <Link href={`/${locale}/certificates`}>
+      <button className="bg-[#05509F] hover:bg-[#05509F]/90 text-white font-bold py-3 px-8 rounded-[40px] transition-all">
+        {t('certificatesLogs')}
+      </button>
+    </Link>
+  </div>
 </div>
             </motion.div>
           </motion.div>

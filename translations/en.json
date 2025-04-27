@@ -11,7 +11,8 @@
     "whyUs": "Why Us",
     "library": "Library",
     "financial": "Financial Consulting",
-    "hiring": "Courses"
+    "hiring": "Hiring",
+    "certificates": "Certificates"
   },
   "hero": {
     "welcome": "Welcome to",
@@ -112,6 +113,34 @@
       "management": {
         "title": "Management Consulting",
         "description": "Providing integrated consulting solutions to improve administrative performance and develop operations"
+      },
+      "projectEvaluation": {
+        "title": "Project Evaluation",
+        "description": "Analysis and evaluation of investment projects with return rates and risk calculations"
+      },
+      "feasibilityStudies": {
+        "title": "Feasibility Studies",
+        "description": "Planning feasibility studies to improve business performance, sales and profitability"
+      },
+      "financialValuations": {
+        "title": "Financial Valuations", 
+        "description": "Providing specialized financial valuations to analyze projects and verify their soundness"
+      },
+      "internalControl": {
+        "title": "Internal Control",
+        "description": "Comprehensive financial recommendations with implementation plans"
+      },
+      "compliance": {
+        "title": "Control & Compliance",
+        "description": "Implementing internal control procedures and ensuring compliance with applicable financial and regulatory laws and regulations"
+      },
+      "mergersAcquisitions": {
+        "title": "Mergers & Acquisitions",
+        "description": "Implementation of financial mergers and acquisitions procedures"
+      },
+      "erpImplementation": {
+        "title": "ERP Implementation",
+        "description": "Implementation of ERP systems to achieve sales and profit objectives"
       }
     }
   },
@@ -419,6 +448,80 @@
       }
     ]
   },
+  "certificatesPage": {
+    "pageTitle": "Certificate Registration",
+    "heroTitle": "Professional Certificate Registration",
+    "breadcrumbs": {
+      "home": "Home",
+      "certificates": "Certificates"
+    }
+  },
+  "certificateForm": {
+    "sectionBadge": "REGISTRATION",
+    "sectionTitle": "Register for Professional Certificates",
+    "sectionDescription": "Enhance your career with internationally recognized professional certificates. Fill out the form below to register for one of our certificate programs.",
+    "title": "Certificate Registration Form",
+    "subtitle": "Please fill out the form below to register for a certificate program. Our team will contact you with further details.",
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "certificate": "Certificate Program",
+      "education": "Educational Background",
+      "experience": "Work Experience"
+    },
+    "placeholders": {
+      "firstName": "Enter your first name",
+      "lastName": "Enter your last name",
+      "email": "Enter your email address",
+      "phone": "Enter your phone number",
+      "certificate": "Select a certificate program",
+      "education": "Enter your educational background",
+      "experience": "Briefly describe your relevant work experience"
+    },
+    "certificates": {
+      "cmaUs": "CMA-US (Certified Management Accountant)",
+      "diplomaIfrs": "Diploma-IFRS (International Financial Reporting Standards)",
+      "fmva": "FMVA (Financial Modeling & Valuation Analyst)",
+      "fmaa": "FMAA (Financial Management & Administrative Assistant)"
+    },
+    "errors": {
+      "firstName": {
+        "required": "First name is required",
+        "tooShort": "First name must be at least 2 characters"
+      },
+      "lastName": {
+        "required": "Last name is required",
+        "tooShort": "Last name must be at least 2 characters"
+      },
+      "email": {
+        "required": "Email address is required",
+        "invalid": "Invalid email format. Example: example@domain.com"
+      },
+      "phone": {
+        "required": "Phone number is required",
+        "invalid": "Invalid phone number format"
+      },
+      "certificate": {
+        "required": "Please select a certificate program"
+      },
+      "education": {
+        "required": "Educational background is required"
+      },
+      "experience": {
+        "required": "Work experience is required"
+      }
+    },
+    "submit": "Submit Registration",
+    "submitting": "Submitting...",
+    "successMessage": "Registration submitted successfully! We will contact you soon with further details.",
+    "submitError": "An error occurred while submitting the form. Please try again.",
+    "termsText": "By submitting this form, you agree to our",
+    "termsLink": "Terms of Service",
+    "andText": "and",
+    "privacyLink": "Privacy Policy"
+  },
   "consultationForm": {
     "title": "Book a Consultation",
     "subtitle": "Get expert business advice and services.",
@@ -470,6 +573,7 @@
       "home": "Home",
       "hiring": "Hiring"
     },
+    "certificatesLogs":"register for a certificate",
     "career": {
       "title": "Career",
       "description": "We place great importance on team collaboration and cultural capabilities. If you want to build your career at 3Capital , please send your resume to"

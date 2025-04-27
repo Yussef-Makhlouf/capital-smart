@@ -110,7 +110,7 @@ export const generateEmailTemplate = (data: {
         <div class="container">
           <!-- Header Section -->
           <div class="header">
-            <img src="https://www.3capital-advisory.com/logo2.png alt="Company Logo" class="company-logo">
+          
             <h1>رسالة جديدة من نموذج الاتصال</h1>
           </div>
   
@@ -145,7 +145,7 @@ export const generateEmailTemplate = (data: {
           <div class="footer">
             شكراً لك على التواصل معنا! يمكنك زيارة موقعنا الإلكتروني عبر 
             <br>
-            <a href="http://www.3capitaladvisory.com/">3capitaladvisory</a>.
+            <a href="https://www.3capital-advisory.com/">3capitaladvisory</a>.
           </div>
         </div>
       </body>

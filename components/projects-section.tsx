@@ -34,6 +34,34 @@ export default function ProjectsSection({ showButton = true }: { showButton?: bo
     {
       key: 'management',
       image: '/cover5.jpg'
+    },
+    {
+      key: 'projectEvaluation',
+      image: '/cover2.jpg'
+    },
+    {
+      key: 'feasibilityStudies', 
+      image: '/pro2.jpg'
+    },
+    {
+      key: 'financialEvaluation',
+      image: '/pro5.jpg'
+    },
+    {
+      key: 'internalControl',
+      image: '/pro6.jpg'
+    },
+    {
+      key: 'compliance',
+      image: '/article.jpg'
+    },
+    {
+      key: 'mergersAcquisitions',
+      image: '/cover3.jpg'
+    },
+    {
+      key: 'erpImplementation',
+      image: '/article2.jpg'
     }
   ]
 
@@ -46,7 +74,14 @@ export default function ProjectsSection({ showButton = true }: { showButton?: bo
     }))
   )
 
-  const displayedServices = showAllServices ? allServices : allServices.slice(0, 6)
+  // When showButton is false (on services page), show all services
+  // When showButton is true (on home page), show based on showAllServices state
+  const displayedServices = !showButton ? services.map(service => ({
+    image: service.image,
+    alt: t(`services.${service.key}.title`),
+    title: t(`services.${service.key}.title`),
+    description: t(`services.${service.key}.description`)
+  })) : (showAllServices ? allServices : allServices.slice(0, 6))
 
   return (
     <section className="py-24 " >
@@ -107,7 +142,7 @@ export default function ProjectsSection({ showButton = true }: { showButton?: bo
               className="bg-[#E41937] hover:bg-[#E41937]/90 rounded-[40px] h-[70px] px-12 text-white font-bold text-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             >
                {t('showMore')}
-               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.25 12.75L5.75 5.25M5.75 5.25V12M5.75 5.25H12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.25 12.75L5.75 5.25V12M5.75 5.25H12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </Button></Link>
           </div>
         )}
