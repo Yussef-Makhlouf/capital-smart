@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /library/
+Allow: /library/*
+
+Sitemap: http://3capital-advisory.com/sitemap.xml
