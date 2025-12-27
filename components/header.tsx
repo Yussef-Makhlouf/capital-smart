@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Link } from '@/lib/navigation'
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
@@ -12,6 +12,8 @@ export default function Header() {
   const [isMachinesOpen, setIsMachinesOpen] = useState(false)
   const [isDoorsOpen, setIsDoorsOpen] = useState(false)
   const t = useTranslations('nav')
+  const locale = useLocale()
+  const dir = locale === 'ar' ? 'rtl' : 'ltr'
 
   // Close all dropdowns when menu is closed
   const handleMenuClose = () => {
@@ -21,7 +23,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full" dir={dir}>
       {/* Top Bar */}
 
 
