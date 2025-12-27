@@ -1,6 +1,12 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import './fonts/fonts.css';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: '3Capital - استشارات مالية وأعمال | خبراء التمويل والاستثمار',
@@ -41,11 +47,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+  // viewport moved to separate export
   category: 'Financial Consulting',
   openGraph: {
     title: '3Capital - استشارات مالية وأعمال | خبراء التمويل والاستثمار',
