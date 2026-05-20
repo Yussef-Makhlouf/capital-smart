@@ -94,9 +94,9 @@ export default function Footer() {
       <div className="bg-[#05509F] mt-12 md:mt-16">
         <div className="container mx-auto px-4 lg:px-[100px] py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white text-xs order-2 md:order-1 text-center md:text-left">
-              {t('developedBy')} <Link href="https://fashne.net" className="text-white hover:text-gray-300 transition-colors">Fashne Digital Markiting</Link>
-            </p>
+            {/* <p className="text-white text-xs order-2 md:order-1 text-center md:text-left">
+              {t('developedBy')} <Link href="https://fashne.net" className="text-white hover:text-gray-300 transition-colors"></Link>
+            </p> */}
             <p className="text-white text-xs font-bold order-1 md:order-2 text-center md:text-right">
               {t('copyright')}
             </p>
